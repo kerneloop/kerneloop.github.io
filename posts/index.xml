@@ -6,8 +6,38 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 21 Jun 2025 00:20:14 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Microtik Routing</title>
+            <link>/posts/microtik-routing/</link>
+            <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
+            
+            <guid>/posts/microtik-routing/</guid>
+            <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
+Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.
+Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description>
+            <content type="html"><![CDATA[<h2 id="que-es-mikrotik">Que es Mikrotik</h2>
+<p>MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.</p>
+<h2 id="porque-mikrotik">Porque Mikrotik</h2>
+<p>Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar!
+Con Mikrotik Puedes hacer <em><strong>Cualquier cosa</strong></em>.</p>
+<h2 id="primeros-pasos">Primeros Pasos</h2>
+<p>Dispondremos de un Router Mikrotik hAP Lite para este laboratorio. Es versatil, comodo y muy potente.
+Precio actual -&gt; 20-30 Euros.</p>
+<p>El primer paso es conectar a tu equipo <strong>Windows</strong> o <strong>Linux</strong> a traves de un cable RJ45 al primer puerto del router.
+Una vez se encienda el Led Verde accederemos al router a traves del programa <a href="https://mikrotik.com/download" title="Winbox">WinBox</a>.
+Cuando haya iniciado deberá de aparecer una interfaz como esta. Tambien verás la direccion MAC de tu Mikrotik.</p>
+<p><img alt="Mikrotik-Main" src="/images/Mikrotik-Routing/Main-Winbox.png"></p>
+<p>Por defecto, las credenciales son <strong>Username:</strong> admin <strong>Password:</strong> <!-- raw HTML omitted --></p>
+<p>Haremos click en conectar y nos solicitará unas nuevas credenciales.<br>
+Una vez introducidas nos redireccionará al menu principal desde el que podremos configurar absolutamente TODO!</p>
+<h3 id="enhorabuena">Enhorabuena!</h3>
+<p>Has accedido por primera vez a tu Router.<br>
+A partir de aqui todo son maravillas, comienza tu exploración con el Networking.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Hello World</title>
@@ -16,13 +46,13 @@
             
             <guid>/posts/hello-world/</guid>
             <description>Hola Mundo. ¿Acaso no es asi como empieza todo?
-Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar. La rutina hace al monje.
+Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar&amp;hellip;.. La rutina hace al monje.
 Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description>
             <content type="html"><![CDATA[<h2 id="hola-mundo">Hola Mundo.</h2>
 <p>¿Acaso no es asi como empieza todo?</p>
 <p>Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso.
 Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día,
-un ratito libre con un café por las mañanas, en una escapada para merendar. La rutina hace al monje.</p>
+un ratito libre con un café por las mañanas, en una escapada para merendar&hellip;.. La rutina hace al monje.</p>
 <p>Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</p>
 <p>Kerneloop.</p>
 ]]></content>

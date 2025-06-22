@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Untagged on Hello Friend NG</title>
-    <link>http://localhost:1313/tags/untagged/</link>
-    <description>Recent content in Untagged on Hello Friend NG</description>
+    <title>Untagged on Welcome to Kerneloop Blog!</title>
+    <link>//localhost:1313/tags/untagged/</link>
+    <description>Recent content in Untagged on Welcome to Kerneloop Blog!</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 21 Jun 2025 00:20:14 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>Hola Mundo. ¿Acaso no es asi como empieza todo?&#xA;Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar. La rutina hace al monje.&#xA;Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description>
+      <title>Microtik Routing</title>
+      <link>//localhost:1313/posts/microtik-routing/</link>
+      <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
+      <guid>//localhost:1313/posts/microtik-routing/</guid>
+      <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.&#xA;Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.</description>
     </item>
   </channel>
 </rss>
