@@ -7,14 +7,21 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jun 2025 14:08:14 +0200</lastBuildDate>
     <atom:link href="//localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microtik Routing</title>
-      <link>//localhost:1313/posts/microtik-routing/</link>
-      <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
-      <guid>//localhost:1313/posts/microtik-routing/</guid>
-      <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.&#xA;Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.</description>
+      <title>Bandit 2</title>
+      <link>//localhost:1313/bandit/bandit-2/</link>
+      <pubDate>Sat, 28 Jun 2025 14:08:14 +0200</pubDate>
+      <guid>//localhost:1313/bandit/bandit-2/</guid>
+      <description>PRUEBA PRUEBA</description>
+    </item>
+    <item>
+      <title>Bandit 1</title>
+      <link>//localhost:1313/bandit/bandit-1/</link>
+      <pubDate>Sat, 28 Jun 2025 14:06:45 +0200</pubDate>
+      <guid>//localhost:1313/bandit/bandit-1/</guid>
+      <description>OvertheWire Bandit0-1 Bienvenido!&#xA;Comenzarémos a realizar los ejercicios de Bandit</description>
     </item>
   </channel>
 </rss>

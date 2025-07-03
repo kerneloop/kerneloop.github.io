@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Welcome to Kerneloop Blog!</title>
+    <link>/tags/mysql/</link>
+    <description>Recent content in Mysql on Welcome to Kerneloop Blog!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 29 Jun 2025 20:45:04 +0200</lastBuildDate>
+    <atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ThuderDB</title>
+      <link>/posts/thuderdb/</link>
+      <pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate>
+      <guid>/posts/thuderdb/</guid>
+      <description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.&#xA;Para iniciar la conexion con el socket como requisito necesita que le pasemos en formato JSON el contenido {&amp;ldquo;a&amp;rdquo;:111}.&#xA;Una vez se ha realizado comenzará a enviar todos los eventos que ocurran de manera obfuscada.&#xA;Buscando un poco por internet y analizando el formato podremos descubrir que se trata de obfuscacion LZW.</description>
+    </item>
+  </channel>
+</rss>

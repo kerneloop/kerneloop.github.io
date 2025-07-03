@@ -7,13 +7,27 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jun 2025 20:45:04 +0200</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microtik Routing</title>
-      <link>/posts/microtik-routing/</link>
+      <title>ThuderDB</title>
+      <link>/posts/thuderdb/</link>
+      <pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate>
+      <guid>/posts/thuderdb/</guid>
+      <description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.&#xA;Para iniciar la conexion con el socket como requisito necesita que le pasemos en formato JSON el contenido {&amp;ldquo;a&amp;rdquo;:111}.&#xA;Una vez se ha realizado comenzará a enviar todos los eventos que ocurran de manera obfuscada.&#xA;Buscando un poco por internet y analizando el formato podremos descubrir que se trata de obfuscacion LZW.</description>
+    </item>
+    <item>
+      <title>Bandit0</title>
+      <link>/bandit/bandit0-0/</link>
+      <pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit0-0/</guid>
+      <description>OverTheWire Bandit 0-1 Bienvenido al nivel 0-0 de Bandit en OverTheWire&#xA;Herramientas: ssh En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh&#xA;como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0&#xA;para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.&#xA;ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!!&#xA;Enlaces de Interes</description>
+    </item>
+    <item>
+      <title>Microtik Router</title>
+      <link>/posts/microtik-router/</link>
       <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
-      <guid>/posts/microtik-routing/</guid>
+      <guid>/posts/microtik-router/</guid>
       <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.&#xA;Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.&#xA;Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description>
     </item>
     <item>

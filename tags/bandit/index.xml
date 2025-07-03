@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bandit on Welcome to Kerneloop Blog!</title>
+    <link>/tags/bandit/</link>
+    <description>Recent content in Bandit on Welcome to Kerneloop Blog!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 28 Jun 2025 14:24:32 +0200</lastBuildDate>
+    <atom:link href="/tags/bandit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit0</title>
+      <link>/bandit/bandit0-0/</link>
+      <pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit0-0/</guid>
+      <description>OverTheWire Bandit 0-1 Bienvenido al nivel 0-0 de Bandit en OverTheWire&#xA;Herramientas: ssh En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh&#xA;como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0&#xA;para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.&#xA;ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!!&#xA;Enlaces de Interes</description>
+    </item>
+  </channel>
+</rss>
