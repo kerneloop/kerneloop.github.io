@@ -10,11 +10,11 @@
     <lastBuildDate>Sun, 29 Jun 2025 20:45:04 +0200</lastBuildDate>
     <atom:link href="/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ThuderDB</title>
+      <title>ThunderDB</title>
       <link>/posts/thuderdb/</link>
       <pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate>
       <guid>/posts/thuderdb/</guid>
-      <description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.&#xA;Para iniciar la conexion con el socket como requisito necesita que le pasemos en formato JSON el contenido {&amp;ldquo;a&amp;rdquo;:111}.&#xA;Una vez se ha realizado comenzará a enviar todos los eventos que ocurran de manera obfuscada.&#xA;Buscando un poco por internet y analizando el formato podremos descubrir que se trata de obfuscacion LZW.</description>
+      <description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.&#xA;Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla abriremos el panel de desarrollador y nos dirigiremos al apartado &amp;ldquo;Network&amp;rdquo; &amp;ldquo;Socket&amp;rdquo;.&#xA;Desde aquí podremos identificar en la seccion &amp;ldquo;Name&amp;rdquo; el websocket que vamos a utilizar.&#xA;WEB SOCKET-&amp;gt; &amp;ldquo;wss://ws1.blitzortung.org/&amp;rdquo;.</description>
     </item>
   </channel>
 </rss>
