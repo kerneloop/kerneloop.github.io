@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/grafana/</loc>
-    <lastmod>2025-06-29T20:45:04+02:00</lastmod>
+    <loc>/tags/bandit/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/bandit/bandit1-2/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/bandit/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/tags/overthewire/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-07-10T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/bandit/bandit0-1/</loc>
+    <lastmod>2025-07-09T14:24:32+02:00</lastmod>
+  </url><url>
+    <loc>/tags/grafana/</loc>
     <lastmod>2025-06-29T20:45:04+02:00</lastmod>
   </url><url>
     <loc>/tags/mysql/</loc>
@@ -14,25 +32,10 @@
     <loc>/posts/</loc>
     <lastmod>2025-06-29T20:45:04+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-06-29T20:45:04+02:00</lastmod>
-  </url><url>
     <loc>/posts/thuderdb/</loc>
     <lastmod>2025-06-29T20:45:04+02:00</lastmod>
   </url><url>
-    <loc>/tags/bandit/</loc>
-    <lastmod>2025-06-28T14:24:32+02:00</lastmod>
-  </url><url>
     <loc>/bandit/bandit0-0/</loc>
-    <lastmod>2025-06-28T14:24:32+02:00</lastmod>
-  </url><url>
-    <loc>/bandit/bandit0-1/</loc>
-    <lastmod>2025-06-28T14:24:32+02:00</lastmod>
-  </url><url>
-    <loc>/bandit/</loc>
-    <lastmod>2025-06-28T14:24:32+02:00</lastmod>
-  </url><url>
-    <loc>/tags/overthewire/</loc>
     <lastmod>2025-06-28T14:24:32+02:00</lastmod>
   </url><url>
     <loc>/posts/microtik-router/</loc>
