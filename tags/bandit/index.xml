@@ -14,7 +14,14 @@
       <link>/bandit/bandit0-0/</link>
       <pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate>
       <guid>/bandit/bandit0-0/</guid>
-      <description>OverTheWire Bandit 0-1 Bienvenido al nivel 0-0 de Bandit en OverTheWire&#xA;Herramientas: ssh En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh&#xA;como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0&#xA;para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.&#xA;ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!!&#xA;Enlaces de Interes</description>
+      <description>OverTheWire Bandit 0-1 Bienvenido al nivel 0 de Bandit en OverTheWire&#xA;Herramientas: ssh | cat En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh&#xA;como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0&#xA;para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.&#xA;ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!</description>
+    </item>
+    <item>
+      <title>Bandit0-1</title>
+      <link>/bandit/bandit0-1/</link>
+      <pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit0-1/</guid>
+      <description>OverTheWire Bandit 0-1 Bienvenido al nivel 0-1 de Bandit en OverTheWire&#xA;Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 1 de Bandit nos encontraremos en el directorio del usuario Bandit1.&#xA;Podremos comprobarlo con el comando pwd que viene de Prit Working Directory.&#xA;Lo primero es comprobar si hay algo en este directorio, utilizaremos el comando ls. Bingo!&#xA;Veremos que hay algo&amp;hellip; parece un guion&amp;hellip; SI!</description>
     </item>
   </channel>
 </rss>
