@@ -7,28 +7,21 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 16 Jul 2025 14:24:32 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jul 2025 14:24:32 +0200</lastBuildDate>
     <atom:link href="/tags/bandit/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bandit4</title>
-      <link>/bandit/bandit4/</link>
-      <pubDate>Wed, 16 Jul 2025 14:24:32 +0200</pubDate>
-      <guid>/bandit/bandit4/</guid>
-      <description>OverTheWire Bandit 4 Bienvenido al nivel 4 de Bandit en OverTheWire&#xA;Herramientas: ls | file | cd | cat Una vez nos hayamos conectado a el nivel 4 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;. Accedemos a ella con cd inhere.&#xA;Dentro de esta carpeta veremos que hay varios archivos con el formato &amp;ldquo;-file0*&amp;rdquo; enumerados del 0 al 9.</description>
-    </item>
     <item>
       <title>Bandit5</title>
       <link>/bandit/bandit5/</link>
-      <pubDate>Wed, 16 Jul 2025 14:24:32 +0200</pubDate>
+      <pubDate>Sun, 20 Jul 2025 14:24:32 +0200</pubDate>
       <guid>/bandit/bandit5/</guid>
       <description>OverTheWire Bandit 5 Bienvenido al nivel 5 de Bandit en OverTheWire&#xA;Al comienzo de este nivel se nos indica que el archivo que contiene la contraseña tiene estas características:&#xA;human-readable 1033 bytes in size not executable Herramientas: ls | find | cd | cat | file Una vez nos hayamos conectado a el nivel 5 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;.</description>
     </item>
     <item>
-      <title>Bandit5</title>
-      <link>/bandit/bandit6/</link>
-      <pubDate>Wed, 16 Jul 2025 14:24:32 +0200</pubDate>
-      <guid>/bandit/bandit6/</guid>
-      <description>OverTheWire Bandit 5 Bienvenido al nivel 5 de Bandit en OverTheWire&#xA;Al comienzo de este nivel se nos indica que el archivo que contiene la contraseña tiene estas características:&#xA;human-readable 1033 bytes in size not executable Herramientas: ls | find | cd | cat | file Una vez nos hayamos conectado a el nivel 5 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;.</description>
+      <title>Bandit4</title>
+      <link>/bandit/bandit4/</link>
+      <pubDate>Fri, 18 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit4/</guid>
+      <description>OverTheWire Bandit 4 Bienvenido al nivel 4 de Bandit en OverTheWire&#xA;Herramientas: ls | file | cd | cat Una vez nos hayamos conectado a el nivel 4 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;. Accedemos a ella con cd inhere.&#xA;Dentro de esta carpeta veremos que hay varios archivos con el formato &amp;ldquo;-file0*&amp;rdquo; enumerados del 0 al 9.</description>
     </item>
     <item>
       <title>Bandit3</title>
