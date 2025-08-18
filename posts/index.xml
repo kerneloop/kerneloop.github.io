@@ -1,25 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Welcome to Kerneloop Blog!</title>
-        <link>/posts/</link>
-        <description>Recent content in Posts on Welcome to Kerneloop Blog!</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate>
-        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>ThunderDB</title>
-            <link>/posts/thuderdb/</link>
-            <pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate>
-            
-            <guid>/posts/thuderdb/</guid>
-            <description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ThunderDB</title><link>https://kerneloop.github.io/posts/thuderdb/</link><pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate><guid>https://kerneloop.github.io/posts/thuderdb/</guid><description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.
 Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla abriremos el panel de desarrollador y nos dirigiremos al apartado &amp;ldquo;Network&amp;rdquo; &amp;ldquo;Socket&amp;rdquo;.
 Desde aquí podremos identificar en la seccion &amp;ldquo;Name&amp;rdquo; el websocket que vamos a utilizar.
-WEB SOCKET-&amp;gt; &amp;ldquo;wss://ws1.blitzortung.org/&amp;rdquo;.</description>
-            <content type="html"><![CDATA[<h3 id="introduccion">Introduccion</h3>
+WEB SOCKET-&amp;gt; &amp;ldquo;wss://ws1.blitzortung.org/&amp;rdquo;.</description><content type="html"><![CDATA[<h3 id="introduccion">Introduccion</h3>
 <p>En este proyecto realizaremos un manejo de parametros de los <strong>rayos</strong> y <strong>truenos</strong> de la página web <a href="https://www.blitzortung.org">Blitzortung</a>
 a traves de un <em>web socket</em>.<br>
 Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla <!-- raw HTML omitted --> abriremos el panel de desarrollador y nos dirigiremos al apartado &ldquo;Network&rdquo; &ldquo;Socket&rdquo;.</p>
@@ -165,19 +147,9 @@ Docker nos permite utilizar un entorno super optimizado y orientado a tareas esp
 Grafana es una herramienta muy potente de visualización de datos que de manera organizada y personalizada nos presentará la informacion que seamos capaces de cargar en todos los entornos de los que dispone.</p>
 <p>Hasta la vista Hackers.<br>
 Kerneloop.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Microtik Router</title>
-            <link>/posts/microtik-router/</link>
-            <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
-            
-            <guid>/posts/microtik-router/</guid>
-            <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
+]]></content></item><item><title>Microtik Router</title><link>https://kerneloop.github.io/posts/microtik-router/</link><pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate><guid>https://kerneloop.github.io/posts/microtik-router/</guid><description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
 Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.
-Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description>
-            <content type="html"><![CDATA[<h2 id="que-es-mikrotik">Que es Mikrotik</h2>
+Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description><content type="html"><![CDATA[<h2 id="que-es-mikrotik">Que es Mikrotik</h2>
 <p>MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.</p>
 <h2 id="porque-mikrotik">Porque Mikrotik</h2>
 <p>Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar!
@@ -195,27 +167,13 @@ Una vez introducidas nos redireccionará al menu principal desde el que podremos
 <h3 id="enhorabuena">Enhorabuena!</h3>
 <p>Has accedido por primera vez a tu Router.<br>
 A partir de aqui todo son maravillas, comienza tu exploración con el Networking.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Hello World</title>
-            <link>/posts/hello-world/</link>
-            <pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate>
-            
-            <guid>/posts/hello-world/</guid>
-            <description>Hola Mundo. ¿Acaso no es asi como empieza todo?
+]]></content></item><item><title>Hello World</title><link>https://kerneloop.github.io/posts/hello-world/</link><pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate><guid>https://kerneloop.github.io/posts/hello-world/</guid><description>Hola Mundo. ¿Acaso no es asi como empieza todo?
 Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar&amp;hellip;.. La rutina hace al monje.
-Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description>
-            <content type="html"><![CDATA[<h2 id="hola-mundo">Hola Mundo.</h2>
+Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description><content type="html"><![CDATA[<h2 id="hola-mundo">Hola Mundo.</h2>
 <p>¿Acaso no es asi como empieza todo?</p>
 <p>Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso.
 Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día,
 un ratito libre con un café por las mañanas, en una escapada para merendar&hellip;.. La rutina hace al monje.</p>
 <p>Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</p>
 <p>Kerneloop.</p>
-]]></content>
-        </item>
-        
-    </channel>
-</rss>
+]]></content></item></channel></rss>
