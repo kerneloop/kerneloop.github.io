@@ -1,3 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Routing on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/tags/routing/</link><description>Recent content in Routing on Welcome to Kerneloop Blog!</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/tags/routing/index.xml" rel="self" type="application/rss+xml"/><item><title>Microtik Router</title><link>https://kerneloop.github.io/posts/microtik-router/</link><pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate><guid>https://kerneloop.github.io/posts/microtik-router/</guid><description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
-Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.
-Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Routing on Welcome to Kerneloop Blog!</title>
+    <link>/tags/routing/</link>
+    <description>Recent content in Routing on Welcome to Kerneloop Blog!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 22 Jun 2025 11:51:30 +0200</lastBuildDate>
+    <atom:link href="/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microtik Router</title>
+      <link>/posts/microtik-router/</link>
+      <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
+      <guid>/posts/microtik-router/</guid>
+      <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.&#xA;Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.&#xA;Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description>
+    </item>
+  </channel>
+</rss>

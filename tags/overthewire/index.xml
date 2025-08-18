@@ -1,20 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OverTheWire on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/tags/overthewire/</link><description>Recent content in OverTheWire on Welcome to Kerneloop Blog!</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 20 Jul 2025 14:24:32 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/tags/overthewire/index.xml" rel="self" type="application/rss+xml"/><item><title>Bandit5</title><link>https://kerneloop.github.io/bandit/bandit5/</link><pubDate>Sun, 20 Jul 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit5/</guid><description>OverTheWire Bandit 5 Bienvenido al nivel 5 de Bandit en OverTheWire
-Al comienzo de este nivel se nos indica que el archivo que contiene la contraseña tiene estas características:
-human-readable 1033 bytes in size not executable Herramientas: ls | find | cd | cat | file Una vez nos hayamos conectado a el nivel 5 de Bandit nos encontraremos en el directorio del usuario Bandit4.
-Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;.</description></item><item><title>Bandit4</title><link>https://kerneloop.github.io/bandit/bandit4/</link><pubDate>Fri, 18 Jul 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit4/</guid><description>OverTheWire Bandit 4 Bienvenido al nivel 4 de Bandit en OverTheWire
-Herramientas: ls | file | cd | cat Una vez nos hayamos conectado a el nivel 4 de Bandit nos encontraremos en el directorio del usuario Bandit4.
-Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;. Accedemos a ella con cd inhere.
-Dentro de esta carpeta veremos que hay varios archivos con el formato &amp;ldquo;-file0*&amp;rdquo; enumerados del 0 al 9.</description></item><item><title>Bandit3</title><link>https://kerneloop.github.io/bandit/bandit3/</link><pubDate>Sat, 12 Jul 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit3/</guid><description>OverTheWire Bandit 3 Bienvenido al nivel 3 de Bandit en OverTheWire
-Herramientas: ls | cat | pwd | cd Una vez nos hayamos conectado a el nivel 3 de Bandit nos encontraremos en el directorio del usuario Bandit3.
-Comprobaremos lo que hay dentro del directorio nuevamente con el comando ls. Veremos que hay una carpeta llamada &amp;ldquo;inhere&amp;rdquo; accederemos a ella con el comando
-cd inhere y listamos los archivos que contenga.</description></item><item><title>Bandit2</title><link>https://kerneloop.github.io/bandit/bandit2/</link><pubDate>Thu, 10 Jul 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit2/</guid><description>OverTheWire Bandit 2 Bienvenido al nivel 2 de Bandit en OverTheWire
-Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 2 de Bandit nos encontraremos en el directorio del usuario Bandit2.
-Comprobaremos lo que hay dentro del directorio nuevamente con el comando ls. Aparentemente son varios archivos ya que vienen separados por espacios, utilizando el parametro &amp;ldquo;-l&amp;rdquo; podremos ver que se trata unicamente de uno.</description></item><item><title>Bandit1</title><link>https://kerneloop.github.io/bandit/bandit1/</link><pubDate>Wed, 09 Jul 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit1/</guid><description>OverTheWire Bandit 1 Bienvenido al nivel 1 de Bandit en OverTheWire
-Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 1 de Bandit nos encontraremos en el directorio del usuario Bandit1.
-Podremos comprobarlo con el comando pwd que viene de Prit Working Directory.
-Lo primero es comprobar si hay algo en este directorio, utilizaremos el comando ls. Bingo!
-Veremos que hay algo&amp;hellip; parece un guion&amp;hellip; SI!</description></item><item><title>Bandit0</title><link>https://kerneloop.github.io/bandit/bandit0/</link><pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit0/</guid><description>OverTheWire Bandit 0 Bienvenido al nivel 0 de Bandit en OverTheWire
-Herramientas: ssh | cat En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh
-como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0
-para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.
-ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OverTheWire on Welcome to Kerneloop Blog!</title>
+    <link>/tags/overthewire/</link>
+    <description>Recent content in OverTheWire on Welcome to Kerneloop Blog!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 20 Jul 2025 14:24:32 +0200</lastBuildDate>
+    <atom:link href="/tags/overthewire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit5</title>
+      <link>/bandit/bandit5/</link>
+      <pubDate>Sun, 20 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit5/</guid>
+      <description>OverTheWire Bandit 5 Bienvenido al nivel 5 de Bandit en OverTheWire&#xA;Al comienzo de este nivel se nos indica que el archivo que contiene la contraseña tiene estas características:&#xA;human-readable 1033 bytes in size not executable Herramientas: ls | find | cd | cat | file Una vez nos hayamos conectado a el nivel 5 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Bandit4</title>
+      <link>/bandit/bandit4/</link>
+      <pubDate>Fri, 18 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit4/</guid>
+      <description>OverTheWire Bandit 4 Bienvenido al nivel 4 de Bandit en OverTheWire&#xA;Herramientas: ls | file | cd | cat Una vez nos hayamos conectado a el nivel 4 de Bandit nos encontraremos en el directorio del usuario Bandit4.&#xA;Con el comando ls veremos una carpeta que se llama &amp;ldquo;inhere&amp;rdquo;. Accedemos a ella con cd inhere.&#xA;Dentro de esta carpeta veremos que hay varios archivos con el formato &amp;ldquo;-file0*&amp;rdquo; enumerados del 0 al 9.</description>
+    </item>
+    <item>
+      <title>Bandit3</title>
+      <link>/bandit/bandit3/</link>
+      <pubDate>Sat, 12 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit3/</guid>
+      <description>OverTheWire Bandit 3 Bienvenido al nivel 3 de Bandit en OverTheWire&#xA;Herramientas: ls | cat | pwd | cd Una vez nos hayamos conectado a el nivel 3 de Bandit nos encontraremos en el directorio del usuario Bandit3.&#xA;Comprobaremos lo que hay dentro del directorio nuevamente con el comando ls. Veremos que hay una carpeta llamada &amp;ldquo;inhere&amp;rdquo; accederemos a ella con el comando&#xA;cd inhere y listamos los archivos que contenga.</description>
+    </item>
+    <item>
+      <title>Bandit2</title>
+      <link>/bandit/bandit2/</link>
+      <pubDate>Thu, 10 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit2/</guid>
+      <description>OverTheWire Bandit 2 Bienvenido al nivel 2 de Bandit en OverTheWire&#xA;Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 2 de Bandit nos encontraremos en el directorio del usuario Bandit2.&#xA;Comprobaremos lo que hay dentro del directorio nuevamente con el comando ls. Aparentemente son varios archivos ya que vienen separados por espacios, utilizando el parametro &amp;ldquo;-l&amp;rdquo; podremos ver que se trata unicamente de uno.</description>
+    </item>
+    <item>
+      <title>Bandit1</title>
+      <link>/bandit/bandit1/</link>
+      <pubDate>Wed, 09 Jul 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit1/</guid>
+      <description>OverTheWire Bandit 1 Bienvenido al nivel 1 de Bandit en OverTheWire&#xA;Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 1 de Bandit nos encontraremos en el directorio del usuario Bandit1.&#xA;Podremos comprobarlo con el comando pwd que viene de Prit Working Directory.&#xA;Lo primero es comprobar si hay algo en este directorio, utilizaremos el comando ls. Bingo!&#xA;Veremos que hay algo&amp;hellip; parece un guion&amp;hellip; SI!</description>
+    </item>
+    <item>
+      <title>Bandit0</title>
+      <link>/bandit/bandit0/</link>
+      <pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate>
+      <guid>/bandit/bandit0/</guid>
+      <description>OverTheWire Bandit 0 Bienvenido al nivel 0 de Bandit en OverTheWire&#xA;Herramientas: ssh | cat En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh&#xA;como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0&#xA;para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.&#xA;ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!</description>
+    </item>
+  </channel>
+</rss>
