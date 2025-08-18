@@ -1,0 +1,179 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ThunderDB</title><link>https://kerneloop.github.io/posts/thuderdb/</link><pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate><guid>https://kerneloop.github.io/posts/thuderdb/</guid><description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.
+Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla abriremos el panel de desarrollador y nos dirigiremos al apartado &amp;ldquo;Network&amp;rdquo; &amp;ldquo;Socket&amp;rdquo;.
+Desde aquí podremos identificar en la seccion &amp;ldquo;Name&amp;rdquo; el websocket que vamos a utilizar.
+WEB SOCKET-&amp;gt; &amp;ldquo;wss://ws1.blitzortung.org/&amp;rdquo;.</description><content type="html"><![CDATA[<h3 id="introduccion">Introduccion</h3>
+<p>En este proyecto realizaremos un manejo de parametros de los <strong>rayos</strong> y <strong>truenos</strong> de la página web <a href="https://www.blitzortung.org">Blitzortung</a>
+a traves de un <em>web socket</em>.<br>
+Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla <!-- raw HTML omitted --> abriremos el panel de desarrollador y nos dirigiremos al apartado &ldquo;Network&rdquo; &ldquo;Socket&rdquo;.</p>
+<p><img alt="Socket" src="/images/ThunderDB/socket.png"></p>
+<p>Desde aquí podremos identificar en la seccion &ldquo;Name&rdquo; el websocket que vamos a utilizar.<br>
+<strong>WEB SOCKET</strong>-&gt; &ldquo;wss://ws1.blitzortung.org/&rdquo;.<br>
+Veremos que esta constantemente recibiendo informacion, sin embargo podremos ver que está cifrada.</p>
+<p>Investigando la forma de trabajo del websocket identificaremos el metodo que utiliza para iniciar la conexion.
+Como requisito necesitará que le pasemos en formato JSON el contenido {&ldquo;a&rdquo;:111}.<br>
+Una vez se ha realizado comenzará a enviar todos los eventos.<br>
+Bien, con un poco de codigo simple relacionado con Web-Sockets seremos capaces de recibir esta informacion. Ahora el problema es que esta obfuscada.<br>
+Buscando un poco por internet y analizando el formato podremos descubrir que se trata de obfuscacion LZW.</p>
+<p>Procederemos a generar un codigo de python que maneje toda la informacion y sea capaz de deobfuscar los datos que recibimos para su tratamiento.</p>
+<p>Utilizaremos las librerias <strong>websocket y json</strong>.</p>
+<p><strong>La funcion de deobfuscamiento será la siguiente:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decoder</span>(encoded_str):
+</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> list(encoded_str)
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> d[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    f <span style="color:#f92672">=</span> c
+</span></span><span style="display:flex;"><span>    g <span style="color:#f92672">=</span> [c]
+</span></span><span style="display:flex;"><span>    h <span style="color:#f92672">=</span> <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>    o <span style="color:#f92672">=</span> h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(d)):
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">=</span> ord(d[i])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> h:
+</span></span><span style="display:flex;"><span>            a_str <span style="color:#f92672">=</span> d[i]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> a <span style="color:#f92672">in</span> e:
+</span></span><span style="display:flex;"><span>            a_str <span style="color:#f92672">=</span> e[a]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            a_str <span style="color:#f92672">=</span> f <span style="color:#f92672">+</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        g<span style="color:#f92672">.</span>append(a_str)
+</span></span><span style="display:flex;"><span>        c <span style="color:#f92672">=</span> a_str[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        e[o] <span style="color:#f92672">=</span> f <span style="color:#f92672">+</span> c
+</span></span><span style="display:flex;"><span>        o <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> a_str
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(g)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;latin1&#39;</span>)
+</span></span></code></pre></div><p>Nuestro codigo ha de tener una funcion para mostrar la información de una manera visible, así comprobaremos que estamos tratando con los datos correctos.<br>
+Para ello mostraremos tanto el codigo obfuscado y el deobfuscado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message</span>(ws, message):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Mensaje recibido (texto):&#34;</span>, message[:<span style="color:#ae81ff">100</span>], <span style="color:#e6db74">&#34;...&#34;</span>)  <span style="color:#75715e"># Mostrar un resumen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Aplicar LZW decoder al mensaje completo (texto plano recibido)</span>
+</span></span><span style="display:flex;"><span>    decoded_bytes <span style="color:#f92672">=</span> decoder(message)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        decoded_text <span style="color:#f92672">=</span> decoded_bytes<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">UnicodeDecodeError</span>:
+</span></span><span style="display:flex;"><span>        decoded_text <span style="color:#f92672">=</span> decoded_bytes<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;latin1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Texto decodificado:&#34;</span>, decoded_text[:<span style="color:#ae81ff">200</span>], <span style="color:#e6db74">&#34;...&#34;</span>)  <span style="color:#75715e"># Mostrar un resumen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(decoded_text)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Datos JSON parseados correctamente:&#34;</span>, data)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> json<span style="color:#f92672">.</span>JSONDecodeError:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;No se pudo parsear JSON después de decodificar&#34;</span>)
+</span></span></code></pre></div><p>Una vez seamos capaces de obtener los datos decodificados podremos empezar a trabajar con ellos!
+Creando dos contenedores de <strong>Docker</strong> (Mysql y Grafana) le daremos forma y vida a estos datos obtenidos.</p>
+<h3 id="mysql">MySQL</h3>
+<ul>
+<li>sudo docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=&lt;CONTRASEÑA&gt; &ndash;name=mysql mysql</li>
+</ul>
+<h3 id="grafana">Grafana</h3>
+<ul>
+<li>sudo docker run -d -p 3000:3000 &ndash;name=grafana grafana/grafana-enterprise</li>
+</ul>
+<p>Partiremos de una instalacion predefinida con usuario admin en MySQL y una configuracion por defecto en Grafana.</p>
+<p>Para la configuracion de la base de datos cargaremos este script al contenedor de docker a traves de &ldquo;Mysql-Client&rdquo;.</p>
+<p><strong>comandos.sql</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MySql" data-lang="MySql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">DATABASE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> thunder;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> thunder;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">USE</span> thunder;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> main_data;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#a6e22e">main_data</span> (
+</span></span><span style="display:flex;"><span>  id <span style="color:#66d9ef">BIGINT</span> <span style="color:#66d9ef">AUTO_INCREMENT</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">time</span> <span style="color:#66d9ef">BIGINT</span>,
+</span></span><span style="display:flex;"><span>  lat <span style="color:#66d9ef">DOUBLE</span>,
+</span></span><span style="display:flex;"><span>  lon <span style="color:#66d9ef">DOUBLE</span>,
+</span></span><span style="display:flex;"><span>  alt <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  pol <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  mds <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  mcg <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  status <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  region <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  delay <span style="color:#66d9ef">FLOAT</span>,
+</span></span><span style="display:flex;"><span>  lonc <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  latc <span style="color:#66d9ef">INT</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> signals;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#a6e22e">signals</span> (
+</span></span><span style="display:flex;"><span>  id <span style="color:#66d9ef">BIGINT</span> <span style="color:#66d9ef">AUTO_INCREMENT</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>  main_data_id <span style="color:#66d9ef">BIGINT</span>,
+</span></span><span style="display:flex;"><span>  sta <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">time</span> <span style="color:#66d9ef">BIGINT</span>,
+</span></span><span style="display:flex;"><span>  lat <span style="color:#66d9ef">DOUBLE</span>,
+</span></span><span style="display:flex;"><span>  lon <span style="color:#66d9ef">DOUBLE</span>,
+</span></span><span style="display:flex;"><span>  alt <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  status <span style="color:#66d9ef">INT</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (main_data_id) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#a6e22e">main_data</span>(id)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Lo cargaremos con:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>mysql -h &lt;IP&gt; -u root -p -vvv &lt; comandos.sql
+</span></span></code></pre></div><p>Donde <!-- raw HTML omitted --> sera la direccion IP del contenedor de Docker.</p>
+<p>Una vez configurada la base de datos accederemos al panel de Grafana desde Data Sources -&gt; Add New Data Source -&gt; Mysql<br>
+Completaremos los campos necesarios con las credenciales indicadas.</p>
+<p><img alt="Grafana" src="/images/ThunderDB/Grafana.png"></p>
+<p>Nota: En caso de no disponer de un certificado TLS/SSL marcaremos la casilla que deshabilita la conexion segura.</p>
+<p>Una vez conectada la base de datos MySql con Grafana procederemos a crear la Dashboard que muestre los datos.</p>
+<p>Nos dirigiremos al apartado &ldquo;Dashboards&rdquo; y crearemos una nueva desde el boton &ldquo;New Dashboard&rdquo; y &ldquo;Add Visualization&rdquo;.</p>
+<p>Nos solicitará un <strong>Data Source</strong> e introduciremos el que acabamos de crear con MySql.</p>
+<p>Tras desplegarse correctamente deberemos crear una consulta que sea capaz de recoger los datos recibidos y mostrarlos en la grafica.<br>
+Ejemplos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MySql" data-lang="MySql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">FROM_UNIXTIME</span>(<span style="color:#66d9ef">time</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000000000</span>) <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">time</span>, <span style="color:#75715e">-- si tu tiempo está en nanosegundos, ajusta la conversión
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  lat,
+</span></span><span style="display:flex;"><span>  lon,
+</span></span><span style="display:flex;"><span>  alt
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> main_data
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">time</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1000</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Mysql" data-lang="Mysql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">FROM_UNIXTIME</span>(s.<span style="color:#66d9ef">time</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000000000</span>) <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">time</span>,
+</span></span><span style="display:flex;"><span>  s.sta,
+</span></span><span style="display:flex;"><span>  s.lat,
+</span></span><span style="display:flex;"><span>  s.lon,
+</span></span><span style="display:flex;"><span>  s.alt,
+</span></span><span style="display:flex;"><span>  s.status
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> signals s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> main_data m <span style="color:#66d9ef">ON</span> s.main_data_id <span style="color:#f92672">=</span> m.id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> s.<span style="color:#66d9ef">time</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1000</span>;
+</span></span></code></pre></div><p>Lanzando las consultas podremos ver que empiezan a mostrarse los datos en el Panle de Visualización.</p>
+<p><img alt="Grafica" src="/images/ThunderDB/grafica.png"></p>
+<h3 id="enhorabuena">Enhorabuena!</h3>
+<p>Hemos conseguido almacenar una gran cantidad de datos y una visualización rápida y efectiva de ellos.<br>
+Si eres un apasionado de los <strong>Truenos y Rayos</strong> es tu momento!</p>
+<h3 id="conclusión">Conclusión</h3>
+<p>A traves de un websocket podemos recibir muchisima información, con su adecuado manejo seremos capaces de una infinidad de cosas.<br>
+Docker nos permite utilizar un entorno super optimizado y orientado a tareas especificas con su sistema de contenedores. Gracias a esto podemos desplegar diferentes entornos sin necesidad de sobrecargar nuestro equipo principal.<br>
+Grafana es una herramienta muy potente de visualización de datos que de manera organizada y personalizada nos presentará la informacion que seamos capaces de cargar en todos los entornos de los que dispone.</p>
+<p>Hasta la vista Hackers.<br>
+Kerneloop.</p>
+]]></content></item><item><title>Microtik Router</title><link>https://kerneloop.github.io/posts/microtik-router/</link><pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate><guid>https://kerneloop.github.io/posts/microtik-router/</guid><description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
+Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.
+Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description><content type="html"><![CDATA[<h2 id="que-es-mikrotik">Que es Mikrotik</h2>
+<p>MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.</p>
+<h2 id="porque-mikrotik">Porque Mikrotik</h2>
+<p>Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar!
+Con Mikrotik Puedes hacer <em><strong>Cualquier cosa</strong></em>.</p>
+<h2 id="primeros-pasos">Primeros Pasos</h2>
+<p>Dispondremos de un Router Mikrotik hAP Lite para este laboratorio. Es versatil, comodo y muy potente.
+Precio actual -&gt; 20-30 Euros.</p>
+<p>El primer paso es conectar a tu equipo <strong>Windows</strong> o <strong>Linux</strong> a traves de un cable RJ45 al primer puerto del router.
+Una vez se encienda el Led Verde accederemos al router a traves del programa <a href="https://mikrotik.com/download" title="Winbox">WinBox</a>.
+Cuando haya iniciado deberá de aparecer una interfaz como esta. Tambien verás la direccion MAC de tu Mikrotik.</p>
+<p><img alt="Mikrotik-Main" src="/images/Mikrotik-Routing/Main-Winbox.png"></p>
+<p>Por defecto, las credenciales son <strong>Username:</strong> admin <strong>Password:</strong> vacía</p>
+<p>Haremos click en conectar y nos solicitará unas nuevas credenciales.<br>
+Una vez introducidas nos redireccionará al menu principal desde el que podremos configurar absolutamente TODO!</p>
+<h3 id="enhorabuena">Enhorabuena!</h3>
+<p>Has accedido por primera vez a tu Router.<br>
+A partir de aqui todo son maravillas, comienza tu exploración con el Networking.</p>
+]]></content></item><item><title>Hello World</title><link>https://kerneloop.github.io/posts/hello-world/</link><pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate><guid>https://kerneloop.github.io/posts/hello-world/</guid><description>Hola Mundo. ¿Acaso no es asi como empieza todo?
+Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar&amp;hellip;.. La rutina hace al monje.
+Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description><content type="html"><![CDATA[<h2 id="hola-mundo">Hola Mundo.</h2>
+<p>¿Acaso no es asi como empieza todo?</p>
+<p>Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso.
+Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día,
+un ratito libre con un café por las mañanas, en una escapada para merendar&hellip;.. La rutina hace al monje.</p>
+<p>Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</p>
+<p>Kerneloop.</p>
+]]></content></item></channel></rss>
