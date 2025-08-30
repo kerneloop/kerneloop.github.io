@@ -13,7 +13,12 @@ Comprobaremos lo que hay dentro del directorio nuevamente con el comando ls. Apa
 Herramientas: ls | cat | pwd Una vez nos hayamos conectado a el nivel 1 de Bandit nos encontraremos en el directorio del usuario Bandit1.
 Podremos comprobarlo con el comando pwd que viene de Prit Working Directory.
 Lo primero es comprobar si hay algo en este directorio, utilizaremos el comando ls. Bingo!
-Veremos que hay algo&amp;hellip; parece un guion&amp;hellip; SI!</description></item><item><title>Bandit0</title><link>https://kerneloop.github.io/bandit/bandit0/</link><pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit0/</guid><description>OverTheWire Bandit 0 Bienvenido al nivel 0 de Bandit en OverTheWire
+Veremos que hay algo&amp;hellip; parece un guion&amp;hellip; SI!</description></item><item><title>Bandit0</title><link>https://kerneloop.github.io/bandit/bandit0-0/</link><pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit0-0/</guid><description>OverTheWire Bandit 0-1 Bienvenido al nivel 0-0 de Bandit en OverTheWire
+Herramientas: ssh En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh
+como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0
+para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.
+ssh -p 2220 bandit0@bandit.labs.overthewire.org Cuando nos solicite la contraseña la introduciremos y veremos que estamos conectados!!
+Enlaces de Interes</description></item><item><title>Bandit0</title><link>https://kerneloop.github.io/bandit/bandit0/</link><pubDate>Sat, 28 Jun 2025 14:24:32 +0200</pubDate><guid>https://kerneloop.github.io/bandit/bandit0/</guid><description>OverTheWire Bandit 0 Bienvenido al nivel 0 de Bandit en OverTheWire
 Herramientas: ssh | cat En este nivel nos conectaremos por primera vez a nuestro laboratorio, dispondremos de la herramienta ssh
 como información nos indican que utilizaremos el perfil bandit0 con contraseña bandit0
 para acceder lanzaremos el comando al puerto 2220 con las credenciales indicadas.

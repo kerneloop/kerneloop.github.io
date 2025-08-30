@@ -1,4 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ThunderDB</title><link>https://kerneloop.github.io/posts/thuderdb/</link><pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate><guid>https://kerneloop.github.io/posts/thuderdb/</guid><description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>LanTap</title><link>https://kerneloop.github.io/posts/lantap/</link><pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate><guid>https://kerneloop.github.io/posts/lantap/</guid><description>LAN TAP</description><content type="html">&lt;p>LAN TAP&lt;/p>
+</content></item><item><title>Data Diode</title><link>https://kerneloop.github.io/posts/datadiode/</link><pubDate>Mon, 18 Aug 2025 20:47:16 +0200</pubDate><guid>https://kerneloop.github.io/posts/datadiode/</guid><description>En este proyecto veremos lo que es un diodo de datos. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido. El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que se encontrará completamente aislado de comunicaciones externas y será capaz de transmitir información para su monitorización, registro y gestión.
+Para empezar debemos entender que protocolos de comunicación vamos a utilizar en este ejercicio.</description><content type="html"><![CDATA[<p>En este proyecto veremos lo que es un <strong>diodo de datos</strong>. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido.
+El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que se encontrará completamente aislado de comunicaciones
+externas y será capaz de transmitir información para su monitorización, registro y gestión.</p>
+<p>Para empezar debemos entender que protocolos de comunicación vamos a utilizar en este ejercicio.</p>
+<p><img alt="Architecture1" src="/images/DataDiode/tcpudpblack.jpg"></p>
+<h3 id="tcp">TCP</h3>
+<p>El protocolo TCP (Transmission Control Protocol) es un protocolo fundamental en la comunicación de datos a través de redes informáticas garantizando una transmisión confiable y ordenada de la información entre dispositivos.
+Tiene un funcionamiento que se divide principalmente en <strong>tres partes:</strong></p>
+<ul>
+<li><strong>SYN</strong> -&gt; El cliente inicia la conexión enviando un paquete SYN al servidor. Este paquete contiene un número de secuencia aleatorio que se utilizará para identificar los paquetes enviados por el cliente.</li>
+<li><strong>SYN ACK</strong> -&gt; El servidor, al recibir el SYN, responde con un paquete SYN-ACK. Este paquete incluye el número de secuencia del cliente incrementado en uno y un nuevo número de secuencia para la comunicación del servidor al cliente.</li>
+<li><strong>ACK</strong> -&gt; El cliente recibe el SYN-ACK y envía un último paquete ACK al servidor, confirmando la conexión y utilizando el número de secuencia del servidor incrementado en uno.</li>
+</ul>
+<p>Como podemos ver, en esta comunicacion se requiere contacto entre los dos agentes, tanto como para iniciar la conexion como para finalizarla.</p>
+<h3 id="udp">UDP</h3>
+<p>El protocolo UDP (User Datagram Protocol) es un protocolo de red que permite el envío de datos sin necesidad de establecer una conexión previa entre emisor y receptor, a diferencia de TCP.
+Esto significa que <strong>UDP</strong> envía datagramas (paquetes de datos) de forma independiente y no garantiza la recepción, el orden ni la integridad de los datos. Su principal ventaja es la velocidad y eficiencia, ideal para aplicaciones donde la latencia es crítica, como streaming de video o juegos online.</p>
+<p><strong>Funcionamiento:</strong></p>
+<ul>
+<li><strong>UDP</strong> divide los datos en paquetes (datagramas) y los envía a la dirección IP y puerto de destino, sin establecer una conexión formal.</li>
+<li>No hay establecimiento de conexión previo ni confirmación de recepción, lo que permite una comunicación rápida.</li>
+<li><strong>UDP</strong> no garantiza que los datagramas lleguen a destino, ni que lleguen en el orden correcto o sin errores.</li>
+</ul>
+<h2 id="entornos-de-uso">Entornos de uso</h2>
+<p>Este tipo de dispositivos se situan en entornos críticos como Plantas Industriales/Nucleares, laboratorios de ciberseguridad o zonas de máxima seguridad.<br>
+Gracias a esta metodología seremos capaces de monitorizar desde un SOC exterior todo el entorno al otro lado del Diodo, pudiendo registrar y recibir lecturas
+de temperatura en centrales industriales o evitando que un virus informático logre una conexion externa con un atacante mientras se hacen pruebas.</p>
+<p><img alt="Architecture2" src="/images/DataDiode/datadiodetap.webp"></p>
+<h2 id="equipo-y-montaje">Equipo y Montaje</h2>
+<p><img alt="Architecture3" src="/images/DataDiode/architecture.png">
+<img alt="Architecture4" src="/images/DataDiode/architecturediode.png"></p>
+]]></content></item><item><title>ThunderDB</title><link>https://kerneloop.github.io/posts/thuderdb/</link><pubDate>Sun, 29 Jun 2025 20:45:04 +0200</pubDate><guid>https://kerneloop.github.io/posts/thuderdb/</guid><description>Introduccion En este proyecto realizaremos un manejo de parametros de los rayos y truenos de la página web Blitzortung a traves de un web socket.
 Lo primero es acceder a la web, para ver el websocket que utilizaremos. Presionando la tecla abriremos el panel de desarrollador y nos dirigiremos al apartado &amp;ldquo;Network&amp;rdquo; &amp;ldquo;Socket&amp;rdquo;.
 Desde aquí podremos identificar en la seccion &amp;ldquo;Name&amp;rdquo; el websocket que vamos a utilizar.
 WEB SOCKET-&amp;gt; &amp;ldquo;wss://ws1.blitzortung.org/&amp;rdquo;.</description><content type="html"><![CDATA[<h3 id="introduccion">Introduccion</h3>
