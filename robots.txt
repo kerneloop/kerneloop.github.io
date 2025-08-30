@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: http://kerneloop.github.io/sitemap.xml
