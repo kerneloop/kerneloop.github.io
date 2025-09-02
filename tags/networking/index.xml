@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networking on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/tags/networking/</link><description>Recent content in Networking on Welcome to Kerneloop Blog!</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 20:47:16 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Diode</title><link>https://kerneloop.github.io/posts/datadiode/</link><pubDate>Mon, 18 Aug 2025 20:47:16 +0200</pubDate><guid>https://kerneloop.github.io/posts/datadiode/</guid><description>En este proyecto veremos lo que es un diodo de datos. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido. El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que se encontrará completamente aislado de comunicaciones externas y será capaz de transmitir información para su monitorización, registro y gestión.
-Para empezar debemos entender que protocolos de comunicación vamos a utilizar en este ejercicio.</description></item><item><title>Microtik Router</title><link>https://kerneloop.github.io/posts/microtik-router/</link><pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate><guid>https://kerneloop.github.io/posts/microtik-router/</guid><description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.
-Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.
-Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Welcome to Kerneloop Blog!</title>
+    <link>/tags/networking/</link>
+    <description>Recent content in Networking on Welcome to Kerneloop Blog!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 18 Aug 2025 20:47:16 +0200</lastBuildDate>
+    <atom:link href="/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Diode</title>
+      <link>/posts/datadiode/</link>
+      <pubDate>Mon, 18 Aug 2025 20:47:16 +0200</pubDate>
+      <guid>/posts/datadiode/</guid>
+      <description>En este proyecto veremos lo que es un diodo de datos. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido. El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que el sistema crítico se encontrará completamente aislado de comunicaciones externas y será capaz de transmitir información para su monitorización, registro y gestión.&#xA;Para empezar debemos entender que protocolos de comunicación vamos a utilizar en este ejercicio.</description>
+    </item>
+    <item>
+      <title>Microtik Router</title>
+      <link>/posts/microtik-router/</link>
+      <pubDate>Sun, 22 Jun 2025 11:51:30 +0200</pubDate>
+      <guid>/posts/microtik-router/</guid>
+      <description>Que es Mikrotik MikroTik es una marca fabricante de equipos de red. Desarrolla y vende enrutadores de red cableados e inalámbricos, conmutadores de red, puntos de acceso, así como sistemas operativos y software auxiliar.&#xA;Porque Mikrotik Es reconocido, tiene un software llamado RouterOS, el cual nos permitirá un manejo amplio en todas las configuraciones que podamos imaginar! Con Mikrotik Puedes hacer Cualquier cosa.&#xA;Primeros Pasos Dispondremos de un Router Mikrotik hAP Lite para este laboratorio.</description>
+    </item>
+  </channel>
+</rss>
