@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Untagged on Welcome to Kerneloop Blog!</title>
-    <link>/tags/untagged/</link>
+    <link>//localhost:1313/tags/untagged/</link>
     <description>Recent content in Untagged on Welcome to Kerneloop Blog!</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate>
-    <atom:link href="/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LanTap</title>
-      <link>/posts/lantap/</link>
+      <link>//localhost:1313/posts/lantap/</link>
       <pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate>
-      <guid>/posts/lantap/</guid>
+      <guid>//localhost:1313/posts/lantap/</guid>
       <description>LAN TAP</description>
     </item>
   </channel>

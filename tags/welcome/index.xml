@@ -1,20 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Welcome on Welcome to Kerneloop Blog!</title>
-    <link>/tags/welcome/</link>
-    <description>Recent content in Welcome on Welcome to Kerneloop Blog!</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 21 Jun 2025 00:20:14 +0200</lastBuildDate>
-    <atom:link href="/tags/welcome/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello World</title>
-      <link>/posts/hello-world/</link>
-      <pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate>
-      <guid>/posts/hello-world/</guid>
-      <description>Hola Mundo. ¿Acaso no es asi como empieza todo?&#xA;Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar&amp;hellip;.. La rutina hace al monje.&#xA;Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Welcome on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/tags/welcome/</link><description>Recent content in Welcome on Welcome to Kerneloop Blog!</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 21 Jun 2025 00:20:14 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/tags/welcome/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://kerneloop.github.io/posts/hello-world/</link><pubDate>Sat, 21 Jun 2025 00:20:14 +0200</pubDate><guid>https://kerneloop.github.io/posts/hello-world/</guid><description>Hola Mundo. ¿Acaso no es asi como empieza todo?
+Es impresionante como un hola puede romper esa barrera entre el no puedo y el primer paso. Esa barrera que se hace tan grande y fría como un muro. La reducimos con un poquito de nosotros cada día, un ratito libre con un café por las mañanas, en una escapada para merendar&amp;hellip;.. La rutina hace al monje.
+Poco a poco ire publicando esos pequeños pasitos que iré dando en mis ratos libes, espero que disfrutes del proceso tanto como yo!</description></item></channel></rss>
