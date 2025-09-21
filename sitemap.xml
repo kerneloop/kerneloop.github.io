@@ -7,25 +7,31 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://kerneloop.github.io/posts/lantap/</loc>
+    <lastmod>2025-08-18T21:21:43+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kerneloop.github.io/tags/networking/</loc>
+    <lastmod>2025-08-18T21:21:43+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://kerneloop.github.io/posts/</loc>
     <lastmod>2025-08-18T21:21:43+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://kerneloop.github.io/posts/datadiode/</loc>
-    <lastmod>2025-08-18T20:47:16+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kerneloop.github.io/tags/networking/</loc>
-    <lastmod>2025-08-18T20:47:16+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://kerneloop.github.io/tags/</loc>
+    <lastmod>2025-08-18T21:21:43+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kerneloop.github.io/posts/datadiode/</loc>
     <lastmod>2025-08-18T20:47:16+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

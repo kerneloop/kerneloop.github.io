@@ -1,4 +1,45 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Diode</title><link>https://kerneloop.github.io/posts/datadiode/</link><pubDate>Mon, 18 Aug 2025 20:47:16 +0200</pubDate><guid>https://kerneloop.github.io/posts/datadiode/</guid><description>En este proyecto veremos lo que es un diodo de datos. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido. El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que el sistema crítico se encontrará completamente aislado de comunicaciones externas y será capaz de transmitir información para su monitorización, registro y gestión.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>LanTap</title><link>https://kerneloop.github.io/posts/lantap/</link><pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate><guid>https://kerneloop.github.io/posts/lantap/</guid><description>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &amp;ldquo;Sniffing - Lan Tap&amp;rdquo; en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.</description><content type="html"><![CDATA[<p>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de <em><strong>interceptar</strong></em> todo el <em><strong>trafico</strong></em> que pase por el nodo de conexion. Este tipo de prácticas son útiles
+a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &ldquo;Sniffing - Lan Tap&rdquo; en el que un <em><strong>atacante</strong></em> recogerá y almacenará
+los paquetes que reciba y envie la victima para su posterior analisis. A traves de este método un atacante puede obtener de manera <em><strong>ilegitima</strong></em> <em><strong>contraseñas</strong></em>, nombres de <em><strong>usuario</strong></em> e información <em><strong>sensible</strong></em> de un usuario.</p>
+<h2 id="esquema">Esquema</h2>
+<p>Partiremos del esquema con el que vamos a trabajar:
+<img alt="esquema" src="/images/LanTap/Schema.png"></p>
+<p>Podemos observar que el momento de intercepción de datos se encuentra entre el <em><strong>firewall</strong></em> y el resto de equipos conectados al <em><strong>switch</strong></em>. De esta manera podremos interceptar tod el trafico que fluya hacia los
+equipos que se encuentran dentro de la <em><strong>red</strong></em>.</p>
+<h2 id="preparacion">Preparacion</h2>
+<p>Procederemos a cortar el cable de <em><strong>conexion</strong></em> entre el <em><strong>router</strong></em> y el <em><strong>switch</strong></em>, lo pelaremos con una herramienta de crimpado y separaremos los cables que se encuentran en el interior del <em><strong>RJ-45</strong></em>.
+Siguiendo esta tabla podremos ver el codigo de colores de un cable de conexion RJ-45 estandart.</p>
+<p><em><strong>OJO</strong></em> -&gt; No confundir con cable de conexion <em><strong>CRUZADO</strong></em>, tiene otro tipo de orden de colores y usos.<br>
+<img alt="esquema" src="/images/LanTap/colortable.png"></p>
+<p>Pelaremos los cables y los volveremos a conectar, de manera que el cobre de las conexiones <em><strong>NARANJA</strong></em>, <em><strong>NARANJA-BLANCO</strong></em>, <em><strong>VERDE</strong></em> y <em><strong>VERDE-BLANCO</strong></em> queden expuestos al contacto fisico.<br>
+<img alt="esquema" src="/images/LanTap/wires.png"></p>
+<p>Pelaremos otros dos cables <em><strong>RJ-45</strong></em> de la siguiente manera:</p>
+<h3 id="cable-1">Cable 1</h3>
+<ul>
+<li>Extremo 1 -&gt; Clavija estandart <em><strong>RJ-45</strong></em>.</li>
+<li>Extremo 2 -&gt; Conexion NARANJA y NARANJA-BLANCO expuesto.</li>
+</ul>
+<h3 id="cable-2">Cable 2</h3>
+<ul>
+<li>Extremo 1 -&gt; Clavija estandart <em><strong>RJ-45</strong></em>.</li>
+<li>Extremo 2 -&gt; Conexion VERDE y VERDE-BLANCO expuesto.</li>
+</ul>
+<p>De esta manera uniremos las conexiones de <em><strong>Cable 1</strong></em> a los polos naranjas del cable de conexion entre el router y el switch y el <em><strong>Cable 2</strong></em> a los polos verdes del mismo.</p>
+<p><img alt="esquema" src="/images/LanTap/howitwork.png"></p>
+<p>Necesitaremos dos adaptadores de RJ-45 a <em><strong>USB</strong></em> para conectarlos al equipo que va a monitorear el trafico, los conectaremos respectivamente e iniciaremos la aplicacion Wireshark previamente instalada.</p>
+<p>Veremos que aparecerán los dos adaptadores en el inicio de <em><strong>Wireshark</strong></em>, los seleccionaremos manteniendo pulsada la tecla CRTL e iniciaremos la monitorización.</p>
+<p><img alt="esquema" src="/images/LanTap/twoadapters.png"></p>
+<h2 id="monitorización">Monitorización</h2>
+<p>Una vez hayamos iniciado el rastreo de paquetes podremos ver como aparecen en pantalla todos los <em><strong>paquetes</strong></em> que pasan a traves de la conexion entre el router y el switch hacia la red que hemos preparado.
+Se ve indicado el <em><strong>origen</strong></em> y <em><strong>destino</strong></em> de cada paquete junto a su fecha de envio, <em><strong>protocolo</strong></em>, longitud e información.
+<img alt="esquema" src="/images/LanTap/result.png"></p>
+<p>Una vez lo deseemos, podremos finalizar la captura de paquetes para poder analizar más en detalle el <em><strong>trafico</strong></em> <em><strong>interceptado</strong></em> y analizar algun tipo de trafico sospechoso, indeseado o de dudosa procedencia.
+Este archivo con la captura se podrá guardar en formato <em><strong>.pcapng</strong></em> para su posterior manejo.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Este método de análisis es muy interesante por parte de un <em><strong>atacante</strong></em> para interceptar el tráfico que se mueve en una red a la que se tiene acceso físico, es una metodología <em><strong>silenciosa</strong></em>,
+no genera ningún tipo de <em><strong>registro</strong></em> y si esta bien preparada es <em><strong>imperceptible</strong></em> a ojos de un usuario común. Es un riesgo que algunas empresas/entornos han llegado a enfrentar en diversas situaciones,
+por eso la <em><strong>seguridad</strong></em> <em><strong>fisica</strong></em> es tan <em><strong>crucial</strong></em> como la seguridad a nivel de software.</p>
+]]></content></item><item><title>Data Diode</title><link>https://kerneloop.github.io/posts/datadiode/</link><pubDate>Mon, 18 Aug 2025 20:47:16 +0200</pubDate><guid>https://kerneloop.github.io/posts/datadiode/</guid><description>En este proyecto veremos lo que es un diodo de datos. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido. El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que el sistema crítico se encontrará completamente aislado de comunicaciones externas y será capaz de transmitir información para su monitorización, registro y gestión.
 Para empezar debemos entender que protocolos de comunicación vamos a utilizar en este ejercicio.</description><content type="html"><![CDATA[<p>En este proyecto veremos lo que es un <strong>diodo de datos</strong>. Como bien indica en su nombre se trata de un conducto de informacion en un unico sentido.
 El objetivo será que el agente que envie informacion no sea capaz de recibirla, de manera que el sistema crítico se encontrará completamente aislado de comunicaciones
 externas y será capaz de transmitir información para su monitorización, registro y gestión.</p>
