@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="LAN TAP" />
-<meta name="keywords" content=", untagged" />
+<meta name="description" content="En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &amp;ldquo;Sniffing - Lan Tap&amp;rdquo; en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis." />
+<meta name="keywords" content="homepage, blog, Networking" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <meta name="google-site-verification" content="YhQZAUQSH3W-N-x073CFMBT3uNNrk7fydnypw99rtv0" />
@@ -41,17 +41,17 @@
 
 
   <meta itemprop="name" content="LanTap">
-  <meta itemprop="description" content="LAN TAP">
+  <meta itemprop="description" content="En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como “Sniffing - Lan Tap” en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.">
   <meta itemprop="datePublished" content="2025-08-18T21:21:43+02:00">
   <meta itemprop="dateModified" content="2025-08-18T21:21:43+02:00">
-  <meta itemprop="wordCount" content="2">
+  <meta itemprop="wordCount" content="559">
   <meta itemprop="image" content="//localhost:1313/">
-  <meta itemprop="keywords" content="Untagged">
+  <meta itemprop="keywords" content="Networking">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="//localhost:1313/">
   <meta name="twitter:title" content="LanTap">
-  <meta name="twitter:description" content="LAN TAP">
+  <meta name="twitter:description" content="En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como “Sniffing - Lan Tap” en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.">
 
 
 
@@ -132,7 +132,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        3 minutes
 
         
       </p>
@@ -150,7 +150,47 @@
       
 
       <div class="post-content">
-        <p>LAN TAP</p>
+        <p>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de <em><strong>interceptar</strong></em> todo el <em><strong>trafico</strong></em> que pase por el nodo de conexion. Este tipo de prácticas son útiles
+a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &ldquo;Sniffing - Lan Tap&rdquo; en el que un <em><strong>atacante</strong></em> recogerá y almacenará
+los paquetes que reciba y envie la victima para su posterior analisis. A traves de este método un atacante puede obtener de manera <em><strong>ilegitima</strong></em> <em><strong>contraseñas</strong></em>, nombres de <em><strong>usuario</strong></em> e información <em><strong>sensible</strong></em> de un usuario.</p>
+<h2 id="esquema">Esquema</h2>
+<p>Partiremos del esquema con el que vamos a trabajar:
+<img alt="esquema" src="/images/LanTap/Schema.png"></p>
+<p>Podemos observar que el momento de intercepción de datos se encuentra entre el <em><strong>firewall</strong></em> y el resto de equipos conectados al <em><strong>switch</strong></em>. De esta manera podremos interceptar tod el trafico que fluya hacia los
+equipos que se encuentran dentro de la <em><strong>red</strong></em>.</p>
+<h2 id="preparacion">Preparacion</h2>
+<p>Procederemos a cortar el cable de <em><strong>conexion</strong></em> entre el <em><strong>router</strong></em> y el <em><strong>switch</strong></em>, lo pelaremos con una herramienta de crimpado y separaremos los cables que se encuentran en el interior del <em><strong>RJ-45</strong></em>.
+Siguiendo esta tabla podremos ver el codigo de colores de un cable de conexion RJ-45 estandart.</p>
+<p><em><strong>OJO</strong></em> -&gt; No confundir con cable de conexion <em><strong>CRUZADO</strong></em>, tiene otro tipo de orden de colores y usos.<br>
+<img alt="esquema" src="/images/LanTap/colortable.png"></p>
+<p>Pelaremos los cables y los volveremos a conectar, de manera que el cobre de las conexiones <em><strong>NARANJA</strong></em>, <em><strong>NARANJA-BLANCO</strong></em>, <em><strong>VERDE</strong></em> y <em><strong>VERDE-BLANCO</strong></em> queden expuestos al contacto fisico.<br>
+<img alt="esquema" src="/images/LanTap/wires.png"></p>
+<p>Pelaremos otros dos cables <em><strong>RJ-45</strong></em> de la siguiente manera:</p>
+<h3 id="cable-1">Cable 1</h3>
+<ul>
+<li>Extremo 1 -&gt; Clavija estandart <em><strong>RJ-45</strong></em>.</li>
+<li>Extremo 2 -&gt; Conexion NARANJA y NARANJA-BLANCO expuesto.</li>
+</ul>
+<h3 id="cable-2">Cable 2</h3>
+<ul>
+<li>Extremo 1 -&gt; Clavija estandart <em><strong>RJ-45</strong></em>.</li>
+<li>Extremo 2 -&gt; Conexion VERDE y VERDE-BLANCO expuesto.</li>
+</ul>
+<p>De esta manera uniremos las conexiones de <em><strong>Cable 1</strong></em> a los polos naranjas del cable de conexion entre el router y el switch y el <em><strong>Cable 2</strong></em> a los polos verdes del mismo.</p>
+<p><img alt="esquema" src="/images/LanTap/howitwork.png"></p>
+<p>Necesitaremos dos adaptadores de RJ-45 a <em><strong>USB</strong></em> para conectarlos al equipo que va a monitorear el trafico, los conectaremos respectivamente e iniciaremos la aplicacion Wireshark previamente instalada.</p>
+<p>Veremos que aparecerán los dos adaptadores en el inicio de <em><strong>Wireshark</strong></em>, los seleccionaremos manteniendo pulsada la tecla CRTL e iniciaremos la monitorización.</p>
+<p><img alt="esquema" src="/images/LanTap/twoadapters.png"></p>
+<h2 id="monitorización">Monitorización</h2>
+<p>Una vez hayamos iniciado el rastreo de paquetes podremos ver como aparecen en pantalla todos los <em><strong>paquetes</strong></em> que pasan a traves de la conexion entre el router y el switch hacia la red que hemos preparado.
+Se ve indicado el <em><strong>origen</strong></em> y <em><strong>destino</strong></em> de cada paquete junto a su fecha de envio, <em><strong>protocolo</strong></em>, longitud e información.
+<img alt="esquema" src="/images/LanTap/result.png"></p>
+<p>Una vez lo deseemos, podremos finalizar la captura de paquetes para poder analizar más en detalle el <em><strong>trafico</strong></em> <em><strong>interceptado</strong></em> y analizar algun tipo de trafico sospechoso, indeseado o de dudosa procedencia.
+Este archivo con la captura se podrá guardar en formato <em><strong>.pcapng</strong></em> para su posterior manejo.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Este metodo de analisis es muy interesante por parte de un <em><strong>atacante</strong></em> para interceptar el trafico que se mueve en una red a la que se tiene acceso fisico, es una metodología <em><strong>silenciosa</strong></em>,
+no genera ningun tipo de <em><strong>registro</strong></em> y si esta bien preparada es <em><strong>imperceptible</strong></em> a ojos de un usuario comun. Es un riesgo que algunas empresas/entornos han llegado a enfrentar en diversas situaciones,
+por eso la <em><strong>seguridad</strong></em> <em><strong>fisica</strong></em> es tan <em><strong>crucial</strong></em> como la seguridad a nivel de software.</p>
 
       </div>
     </article>
@@ -162,7 +202,7 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="/tags/untagged/">untagged</a></span>
+        <span class="tag"><a href="/tags/networking/">Networking</a></span>
         
     </p>
 
@@ -177,7 +217,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2 Words
+        559 Words
       </p>
 
       <p>

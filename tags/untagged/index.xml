@@ -14,7 +14,7 @@
       <link>//localhost:1313/posts/lantap/</link>
       <pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate>
       <guid>//localhost:1313/posts/lantap/</guid>
-      <description>LAN TAP</description>
+      <description>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &amp;ldquo;Sniffing - Lan Tap&amp;rdquo; en el que el atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.</description>
     </item>
   </channel>
 </rss>
