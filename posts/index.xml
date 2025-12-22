@@ -1,4 +1,126 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Aug 2025 21:21:43 +0200</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>LanTap</title><link>https://kerneloop.github.io/posts/lantap/</link><pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate><guid>https://kerneloop.github.io/posts/lantap/</guid><description>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &amp;ldquo;Sniffing - Lan Tap&amp;rdquo; en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.</description><content type="html"><![CDATA[<p>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de <em><strong>interceptar</strong></em> todo el <em><strong>trafico</strong></em> que pase por el nodo de conexion. Este tipo de prácticas son útiles
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Welcome to Kerneloop Blog!</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Welcome to Kerneloop Blog!</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 22 Dec 2025 13:28:55 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Autopsy</title><link>https://kerneloop.github.io/posts/autopsy/</link><pubDate>Mon, 22 Dec 2025 13:28:55 +0100</pubDate><guid>https://kerneloop.github.io/posts/autopsy/</guid><description>Forensic Analisys Como analistas forenses se nos presenta una imagen obtenida del equipo personal de un crimen digital. Nuestra tarea es analizar esta imagen de su equipo y sacar las conclusiones que se convertirán en Evidencias Digitales para su posterior presentación.
+REQUISITOS Sistema Operativo -&amp;gt; Windows 10
+Software -&amp;gt; FTK Imager - Autopsy
+PROCEDIMIENTO FTK Imager Para comenzar con este analisis lo primero es hacer una imagen del equipo, para ello utilizaremos FTK Imager.</description><content type="html"><![CDATA[<h1 id="forensic-analisys">Forensic Analisys</h1>
+<p><img alt="esquema" src="/images/Autopsy/perro.png">
+Como analistas forenses se nos presenta una imagen obtenida del equipo personal de un crimen digital. Nuestra tarea es analizar esta imagen de su equipo y sacar las conclusiones que se convertirán en Evidencias Digitales para su posterior presentación.</p>
+<h2 id="requisitos">REQUISITOS</h2>
+<p>Sistema Operativo -&gt; Windows 10<br>
+Software -&gt; FTK Imager - Autopsy</p>
+<h1 id="procedimiento">PROCEDIMIENTO</h1>
+<h2 id="ftk-imager">FTK Imager</h2>
+<p>Para comenzar con este analisis lo primero es hacer una <strong>imagen del equipo</strong>, para ello utilizaremos FTK Imager. Lo iniciaremos y haremos click en Create Disk Image desde el menu. Nota: El disco duro ha de estar insertado.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/1.png"><br>
+Se presentará una nueva ventana con las multiples opciones de copiado Elegiremos la <strong>Fisica</strong>.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/2.png"><br>
+Seleccionaremos el disco duro que vamos a copiar y haremos click en “<em>Siguiente</em>”.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/3.png"><br>
+En la creacion de imagen le daremos a <strong>Add</strong> para añadir un destino de la imagen.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/4.png"><br>
+Seleccionaremos el tipo de copiado, en nuestro caso <strong>DD</strong> (Data duplicator) ya que va recorriendo a un <strong>nivel más bajo</strong> los sectores del disco y por ende la copia es de mayor calidad.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/5.png"><br>
+Rellenaremos los datos necesarios para detallar el caso en la siguiente ficha.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/6.png"><br>
+Y por ultimo añadiremos el destino de la copia e indicaremos su nombre. Podemos personalizar también el tamaño de los fragmentos.<br>
+<img alt="esquema" src="/images/Autopsy/FTK/7.png"><br>
+Una vez haya terminado el proceso se presentará la siguiente ventana. Desde la que podremos ver su <strong>código Hash</strong> asignado y calculado con las funciones <strong>MD5 y SHA1</strong>. También veremos sus propiedades como numero de sectores y si hay algún bloque corrupto en el disco.<br>
+Es muy importante apuntar el Código Hash ya que aquí comienza la <strong>Cadena de Custodia</strong> de este elemento, siendo identificado en todo momento y comprobando su integridad con esta cadena de caracteres.<br>
+<img alt="esquema" src="/images/Autopsy/Fincopiadohash.png"><br>
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+<img alt="esquema" src="/images/Autopsy/Fincopianohash.png"><br>
+Por ultimo podemos obtener un resumen en formato texto de esta tarea:<br>
+Nos proporcionará información extra muy útil en nuestra tarea como forenses.<br>
+<img alt="esquema" src="/images/Autopsy/Summary.png"></p>
+<h2 id="autopsy">Autopsy</h2>
+<p>Comenzaremos abriendo la herramienta. Se nos solicitará información y datos para crear un nuevo caso de investigación forense. Haremos click en “New Case”.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/0.png"><br>
+Aquí personalizaremos y añadiremos la ruta de almacenamiento del caso que hemos creado y daremos algunos detalles del caso que vamos a analizar:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/1.png"><br>
+Tras hacer click en Next completamos la información restante con los <strong>máximos detalles</strong> posibles y le damos a &ldquo;Finish&rdquo;.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/2.png"><br>
+Añadiremos como origen de datos la copia virtual del disco desde <strong>“Add Datasource”</strong>. Rellenaremos los datos según nuestra conveniencia. Por el momento el Host lo mantendremos por defecto.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/3.png"><br>
+Como data source type elegiremos <strong>“Disk Image or VM file”</strong> que sera el correspondiente a la copia que hemos realizado.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/4.png"><br>
+Buscaremos la ruta de la copia que hemos realizado y seleccionaremos el primer elemento de la copia.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/5.png"><br>
+Nota: Puede variar según el tipo de copia que hayamos realizado (DD Raw SMART E01 etc)<br>
+Si lo deseamos para aumentar el nivel de integridad podemos añadir los resultados de las <strong>funciones Hash</strong> calculadas previamente.<br>
+Haremos click en next y veremos una nueva ventana en la que se presentan todos los módulos con los que podemos trabajar desde autopsy. Deseleccionaremos todos y marcaremos <strong>“Recent Activity”</strong> para reducir el tiempo de análisis.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/6.png"><br>
+Iniciaremos el proceso de extracción de datos y esperaremos a los resultados.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/7.png"><br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/8.png"><br>
+Vemos que ha finalizado sin problemas y procederemos al <em>análisis en profundidad</em>.<br>
+Se presentará una interfaz en la que se podrá identificar de manera visual todos los datos extraidos de la imagen de disco proporcionada:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/9.png"><br>
+Iremos poco a poco desmenuzando la información obtenida.<br>
+Primero se proporcionará la <em>estructura global</em> de datos del disco, pudiendo ver <em>particiones, estructuras de carpetas y datos detallados</em> del sistema de archivos:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/10.png"><br>
+Podremos ver los detalles en <strong>“Data Artifacts”</strong> . <em>Sistema Operativo, nombre del equipo, nombre del propietario, etiqueta del disco</em> etc.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/11.png"><br>
+Desde “File views” observaremos una clasificacion de archivos por extensiones desde la que podremos sacar <strong>imagenes, videos, bases de datos, documentos HTML o de texto plano etc</strong>.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/12.png"><br>
+De esta sección queda a destacar la gran cantidad de imágenes que existen (las cuales incluyen iconos e imágenes del sistema) y la cantidad de documentos HTML lo cual nos hace pensar que hosteaba algún tipo de <em>servidor</em>.<br>
+Si investigamos más a fondo en los documentos HTML veremos nombres <em>git</em> lo que nos hace pensar que tiene relacion con el software <strong>“Git”</strong> o hostea este tipo de estructuras.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/13.png"><br>
+Más adelante tenemos una seccion muy interesante llamada <strong>“Deleted Files”</strong> la cual llama la atencion investigar, teniendo en cuenta que se le haya podido escapar algún documento eliminado que no ha borrado correctamente. Cambien incluye documentación temporal o de inicio del equipo.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/14.png"><br>
+Pasamos a una sección muy interesante, <strong>“MB File Size”</strong>. Aqui se dividen los archivos por tamaño, pudiendo clasificarse en:</p>
+<ul>
+<li><strong>MB 50 – 200</strong> → Archivos pequeños como configuraciones o documentos personales de texto o trabajos particulares. Muy interesantes para investigar configuraciones personalizadas o documentos con información más personal. También ejecutables o accesos directos.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/15.png"></li>
+<li><strong>MB 200 – 1GB</strong> → Este rango incluirá desde documentos pesados como librerias contundentes hasta programas instalados en el equipo.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/16.png"></li>
+<li>**MB 1GB+ **→ Estos documentos tan pesados son posibles bases de datos del sistema, como hemos visto previamente en el apartado de archivos HTML, aquí aparecerán los archivos de las BBDD de la web. También aparecerán almacenamientos de paginación de programas grandes en los que la memoria RAM se saturaba.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/17.png"><br>
+Pasamos a la seccion <strong>“Data Artifacts”</strong>. Aqí se clasificarán los datos obtenidos en diferentes grupos:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/18.png"><br>
+Destacaremos <em>Programas instalados, Documentos Recientes, Programas corriendo, USB Device Attached, Web Accounts, Coockies, Downloads e Historial y por ultimo Web Form Autofill</em>.</li>
+<li><strong>Programas Instalados</strong>. Una seccion que nos indicará el tipo de trabajo que realizaba el usuario y las tareas que desempeñaba. Podemos ver SOFTWARE como HomeBank o Money Manager que nos indica el manejo de cuentas bancarias.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/19.png"></li>
+<li><strong>Documentos Recientes</strong>. Una seccion util, mostrará su actividad reciente. Podemos observar que trabajaba con archivos de Github, corroborando lo visto previamente en HTML Docs.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/20.png"></li>
+<li><strong>Programas Corriendo</strong>. Aqui veremos los programas que estaban iniciados en el sistema cuando se tomó la imagen, se mostrarán los servicios de los que se disponia como Git o GithubDesktop.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/21.png"><br>
+También aparece Chrome.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/22.png"></li>
+<li><strong>USB Device Attached</strong>. Veremos los dispositivos USB externos con los que trabajaba, es interesante de cara a la información no contenida en el equipo y posiblemente relacionada con el escenario. Veremos sus ID’s e información de los dispositivos para comprara con los que se han encontrado en la escena.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/23.png"></li>
+<li><strong>Web Accounts, Cookies e Historial</strong>. Aqui podremos ver los diversos datos de navegación del usuario, como las paginas en las que se ha registrado y su nombre de usuario o correo (<a href="mailto:bart.simpson_springfield@hotmail.com">bart.simpson_springfield@hotmail.com</a>) (Github)<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/24.png"><br>
+Tambien veremos las cookies, pudiendo dar pistas sobre que webs se ha navegado<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/25.png"><br>
+Y el historial que indica el proceso de navegación. (Principalmente Github)<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/26.png"></li>
+<li>Por ultimo tenemos la sección <strong>Web Form Autofill</strong>. Que mostrará la información guardada en el navegador para auto rellenar los formularios, esta es información muy sensible, ya que implica datos personales del usuario. Puede ser útil de cara a una investigación pero ha de ser manejada con cuidado.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/27.png"><br>
+En el apartado de  <em>“Analisys Results”</em> tenemos Web Account type, desde donde podremos obtener tambien información muy valiosa, como las <strong>preguntas de seguridad</strong> del usuario Bart:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/28.png"><br>
+Queda a destacar que según vamos haciendo el proceso de investigación podremos marcar con <strong>“Tags”</strong> los artefactos que nos sugieran infomación interesante. Estos se reflejarán en la ultima seccion Tags. Un ejemplo:<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/29.png"><br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/30.png"></li>
+</ul>
+<h2 id="report">Report</h2>
+<p>Generaremos un reporte para poder ver los datos mas claramente desde <strong>“Generate Report”</strong>.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/31.png"><br>
+Usaremos el formato <strong>HTML</strong>.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/32.png"><br>
+Seleccionamos el <strong>Data source</strong>.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/33.png"><br>
+Y todos los resultados especificados, en nuestro caso las marcas<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/34.png"><br>
+Esperaremos a la generacion<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/35.png"><br>
+Una vez generado lo abriremos en nuestro navegador para su mejor visualización.<br>
+<img alt="esquema" src="/images/Autopsy/Autopsy/36.png"></p>
+<h3 id="incidencias">INCIDENCIAS.</h3>
+<p>Sin Incidencias notificadas.</p>
+<h3 id="bibliografía">BIBLIOGRAFÍA.</h3>
+<ul>
+<li><a href="https://www.autopsy.com/">https://www.autopsy.com/</a></li>
+</ul>
+]]></content></item><item><title>LanTap</title><link>https://kerneloop.github.io/posts/lantap/</link><pubDate>Mon, 18 Aug 2025 21:21:43 +0200</pubDate><guid>https://kerneloop.github.io/posts/lantap/</guid><description>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de interceptar todo el trafico que pase por el nodo de conexion. Este tipo de prácticas son útiles a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &amp;ldquo;Sniffing - Lan Tap&amp;rdquo; en el que un atacante recogerá y almacenará los paquetes que reciba y envie la victima para su posterior analisis.</description><content type="html"><![CDATA[<p>En este ejercicio vamos a preparar un intermediario en una red, a traves de este intermediario seremos capaces de <em><strong>interceptar</strong></em> todo el <em><strong>trafico</strong></em> que pase por el nodo de conexion. Este tipo de prácticas son útiles
 a la hora de capturar y monitorizar de una manera precisa todo el trafico. Tambien es conocido como un método de ataque invasivo conocido como &ldquo;Sniffing - Lan Tap&rdquo; en el que un <em><strong>atacante</strong></em> recogerá y almacenará
 los paquetes que reciba y envie la victima para su posterior analisis. A traves de este método un atacante puede obtener de manera <em><strong>ilegitima</strong></em> <em><strong>contraseñas</strong></em>, nombres de <em><strong>usuario</strong></em> e información <em><strong>sensible</strong></em> de un usuario.</p>
 <h2 id="esquema">Esquema</h2>
