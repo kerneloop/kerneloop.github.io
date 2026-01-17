@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Shodan Dorks Basic Shodan Filters City
+Find devices in a particular city.
+city:&amp;quot;Bangalore&amp;quot;
+Country
+Find devices in a particular country.
+country:&amp;quot;IN&amp;quot;
+Geo
+Find devices by giving geographical coordinates. geo:&amp;quot;56.913055,118.250862&amp;quot;
+Location
+country:us country:ru country:de city:chicago
+Hostname
+Find devices matching the hostname. server: &amp;quot;gws&amp;quot; hostname:&amp;quot;google&amp;quot; hostname:example.com -hostname:subdomain.example.com hostname:example.com,example.org
+Net
+Find devices based on an IP address or /x CIDR. net:210.214.0.0/16
+Organization
+org:microsoft org:&amp;quot;United States Department&amp;quot;
+Autonomous System Number (ASN)
+asn:ASxxxx
+OS Find devices based on operating system." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<meta name="google-site-verification" content="YhQZAUQSH3W-N-x073CFMBT3uNNrk7fydnypw99rtv0" />
+<link rel="canonical" href="//localhost:1313/shodan/" />
+
+
+    <title>
+        
+            Shodan :: Welcome to Kerneloop Blog!  — A beautiful Blog
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.244183cde1a38e0b08f82c11791181288f9aac1cc9618cd6f4e9e7710c5768ba.css" integrity="sha256-JEGDzeGjjgsI&#43;CwReRGBKI&#43;arBzJYYzW9OnncQxXaLo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Shodan">
+  <meta itemprop="description" content="Shodan Dorks Basic Shodan Filters City
+Find devices in a particular city.
+city:&#34;Bangalore&#34;
+Country
+Find devices in a particular country.
+country:&#34;IN&#34;
+Geo
+Find devices by giving geographical coordinates. geo:&#34;56.913055,118.250862&#34;
+Location
+country:us country:ru country:de city:chicago
+Hostname
+Find devices matching the hostname. server: &#34;gws&#34; hostname:&#34;google&#34; hostname:example.com -hostname:subdomain.example.com hostname:example.com,example.org
+Net
+Find devices based on an IP address or /x CIDR. net:210.214.0.0/16
+Organization
+org:microsoft org:&#34;United States Department&#34;
+Autonomous System Number (ASN)
+asn:ASxxxx
+OS Find devices based on operating system.">
+  <meta itemprop="datePublished" content="2026-01-05T12:03:30+01:00">
+  <meta itemprop="dateModified" content="2026-01-05T12:03:30+01:00">
+  <meta itemprop="wordCount" content="1227">
+  <meta itemprop="image" content="//localhost:1313/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/">
+  <meta name="twitter:title" content="Shodan">
+  <meta name="twitter:description" content="Shodan Dorks Basic Shodan Filters City
+Find devices in a particular city.
+city:&#34;Bangalore&#34;
+Country
+Find devices in a particular country.
+country:&#34;IN&#34;
+Geo
+Find devices by giving geographical coordinates. geo:&#34;56.913055,118.250862&#34;
+Location
+country:us country:ru country:de city:chicago
+Hostname
+Find devices matching the hostname. server: &#34;gws&#34; hostname:&#34;google&#34; hostname:example.com -hostname:subdomain.example.com hostname:example.com,example.org
+Net
+Find devices based on an IP address or /x CIDR. net:210.214.0.0/16
+Organization
+org:microsoft org:&#34;United States Department&#34;
+Autonomous System Number (ASN)
+asn:ASxxxx
+OS Find devices based on operating system.">
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-01-05 12:03:30 &#43;0100 CET" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Welcome to my Blog!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+            <li><a href="/comandoslinux/">Commands</a></li>
+        <ul class="submenu">
+            <li class="dropdown">
+                <a href="http://youtube.com/@kerneloop" class="dropbtn">YouTube</a>
+                <div class="dropdown-content">
+                </div>
+            </li>
+        </ul>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="//localhost:1313/shodan/">Shodan</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="shodan-dorks">Shodan Dorks</h1>
+<h1 id="basic-shodan-filters">Basic Shodan Filters</h1>
+<p><strong>City</strong><br>
+Find devices in a particular city.<br>
+<code>city:&quot;Bangalore&quot;</code></p>
+<p><strong>Country</strong></p>
+<p>Find devices in a particular country.<br>
+<code>country:&quot;IN&quot;</code></p>
+<p><strong>Geo</strong><br>
+Find devices by giving geographical coordinates.
+<code>geo:&quot;56.913055,118.250862&quot;</code></p>
+<p><strong>Location</strong><br>
+<code>country:us</code>
+<code>country:ru country:de city:chicago</code></p>
+<p><strong>Hostname</strong><br>
+Find devices matching the hostname.
+<code>server: &quot;gws&quot; hostname:&quot;google&quot;</code>
+<code>hostname:example.com -hostname:subdomain.example.com</code>
+<code>hostname:example.com,example.org</code></p>
+<p><strong>Net</strong><br>
+Find devices based on an IP address or /x CIDR.
+<code>net:210.214.0.0/16</code></p>
+<p><strong>Organization</strong><br>
+<code>org:microsoft</code>
+<code>org:&quot;United States Department&quot;</code></p>
+<p><strong>Autonomous System Number (ASN)</strong><br>
+<code>asn:ASxxxx</code></p>
+<p><strong>OS</strong>
+Find devices based on operating system.
+<code>os:&quot;windows 7&quot;</code></p>
+<p><strong>Port</strong><br>
+Find devices based on open ports.
+<code>proftpd port:21</code></p>
+<p><strong>Before/after:</strong><br>
+Find devices before or after between a given time.
+<code>apache after:22/02/2009 before:14/3/2010</code></p>
+<p><strong>SSL/TLS Certificates</strong></p>
+<p>Self signed certificates
+<code>ssl.cert.issuer.cn:example.com ssl.cert.subject.cn:example.com</code></p>
+<p>Expired certificates
+<code>ssl.cert.expired:true</code></p>
+<p><code>ssl.cert.subject.cn:example.com</code></p>
+<p><strong>Device Type</strong></p>
+<p><code>device:firewall</code>
+<code>device:router</code>
+<code>device:wap</code>
+<code>device:webcam</code>
+<code>device:media</code>
+<code>device:&quot;broadband router&quot;</code>
+<code>device:pbx</code>
+<code>device:printer</code>
+<code>device:switch</code>
+<code>device:storage</code>
+<code>device:specialized</code>
+<code>device:phone</code>
+<code>device:&quot;voip&quot;</code>
+<code>device:&quot;voip phone&quot;</code>
+<code>device:&quot;voip adaptor&quot;</code>
+<code>device:&quot;load balancer&quot;</code>
+<code>device:&quot;print server&quot;</code>
+<code>device:terminal</code>
+<code>device:remote</code>
+<code>device:telecom</code>
+<code>device:power</code>
+<code>device:proxy</code>
+<code>device:pda</code>
+<code>device:bridge</code></p>
+<p><strong>Operating System</strong></p>
+<p><code>os:&quot;windows 7&quot;</code>
+<code>os:&quot;windows server 2012&quot;</code>
+<code>os:&quot;linux 3.x&quot;</code></p>
+<p><strong>Product</strong></p>
+<p><code>product:apache</code>
+<code>product:nginx</code>
+<code>product:android</code>
+<code>product:chromecast</code></p>
+<p><strong>Customer Premises Equipment (CPE)</strong></p>
+<p><code>cpe:apple</code>
+<code>cpe:microsoft</code>
+<code>cpe:nginx</code>
+<code>cpe:cisco</code></p>
+<p><strong>Server</strong></p>
+<p><code>server: nginx</code>
+<code>server: apache</code>
+<code>server: microsoft</code>
+<code>server: cisco-ios</code></p>
+<p><strong>ssh fingerprints</strong></p>
+<p><code>dc:14:de:8e:d7:c1:15:43:23:82:25:81:d2:59:e8:c0</code></p>
+<h1 id="web">Web</h1>
+<p><strong>Pulse Secure</strong></p>
+<p><code>http.html:/dana-na</code></p>
+<p><strong>PEM Certificates</strong></p>
+<p><code>http.title:&quot;Index of /&quot; http.html:&quot;.pem&quot;</code></p>
+<p><strong>Tor / Dark Web sites</strong></p>
+<p><code>onion-location</code></p>
+<h1 id="databases">Databases</h1>
+<p><strong>MySQL</strong></p>
+<p><code>&quot;product:MySQL&quot;</code>
+<code>mysql port:&quot;3306&quot;</code></p>
+<p><strong>MongoDB</strong></p>
+<p><code>&quot;product:MongoDB&quot;</code>
+<code>mongodb port:27017</code></p>
+<p><strong>Fully open MongoDBs</strong></p>
+<p><code>&quot;MongoDB Server Information { &quot;metrics&quot;:&quot;</code>
+<code>&quot;Set-Cookie: mongo-express=&quot; &quot;200 OK&quot;</code>
+<code>&quot;MongoDB Server Information&quot; port:27017 -authentication</code></p>
+<p><strong>Kibana dashboards without authentication</strong></p>
+<p><code>kibana content-legth:217</code></p>
+<p><strong>elastic</strong></p>
+<p><code>port:9200 json</code>
+<code>port:&quot;9200&quot; all:elastic</code>
+<code>port:&quot;9200&quot; all:&quot;elastic indices&quot;</code></p>
+<p><strong>Memcached</strong></p>
+<p><code>&quot;product:Memcached&quot;</code></p>
+<p><strong>CouchDB</strong></p>
+<p><code>&quot;product:CouchDB&quot;</code>
+<code>port:&quot;5984&quot;+Server: &quot;CouchDB/2.1.0&quot;</code></p>
+<p><strong>PostgreSQL</strong></p>
+<p><code>&quot;port:5432 PostgreSQL&quot;</code></p>
+<p><strong>Riak</strong></p>
+<p><code>&quot;port:8087 Riak&quot;</code></p>
+<p><strong>Redis</strong></p>
+<p><code>&quot;product:Redis&quot;</code></p>
+<p><strong>Cassandra</strong></p>
+<p><code>&quot;product:Cassandra&quot;</code></p>
+<h1 id="industrial-control-systems">Industrial Control Systems</h1>
+<p><strong>Samsung Electronic Billboards</strong></p>
+<p><code>&quot;Server: Prismview Player&quot;</code></p>
+<p><strong>Gas Station Pump Controllers</strong></p>
+<p><code>&quot;in-tank inventory&quot; port:10001</code></p>
+<p><strong>Fuel Pumps connected to internet:</strong></p>
+<p>No auth required to access CLI terminal.<br>
+<code>&quot;privileged command&quot; GET</code></p>
+<p><strong>Automatic License Plate Readers</strong></p>
+<p><code>P372 &quot;ANPR enabled&quot;</code></p>
+<p><strong>Traffic Light Controllers / Red Light Cameras</strong></p>
+<p><code>mikrotik streetlight</code></p>
+<p><strong>Voting Machines in the United States</strong></p>
+<p>&ldquo;voter system serial&rdquo;
+<code>country:US</code></p>
+<p><strong>Open ATM:</strong></p>
+<p>May allow for ATM Access availability<br>
+<code>NCR Port:&quot;161&quot;</code></p>
+<p><strong>Telcos Running Cisco Lawful Intercept Wiretaps</strong></p>
+<p><code>&quot;Cisco IOS&quot; &quot;ADVIPSERVICESK9_LI-M&quot;</code></p>
+<p><strong>Prison Pay Phones</strong></p>
+<p><code>&quot;[2J[H Encartele Confidential&quot;</code></p>
+<p><strong>Tesla PowerPack Charging Status</strong><br>
+<code>http.title:&quot;Tesla PowerPack System&quot; http.component:&quot;d3&quot; -ga3ca4f2</code></p>
+<p><strong>Electric Vehicle Chargers</strong></p>
+<p><code>&quot;Server: gSOAP/2.8&quot; &quot;Content-Length: 583&quot;</code></p>
+<p><strong>Maritime Satellites</strong></p>
+<p>Shodan made a pretty sweet Ship Tracker that maps ship locations in real time, too!</p>
+<p><code>&quot;Cobham SATCOM&quot; OR (&quot;Sailor&quot; &quot;VSAT&quot;)</code></p>
+<p><strong>Submarine Mission Control Dashboards</strong></p>
+<p><code>title:&quot;Slocum Fleet Mission Control&quot;</code></p>
+<p><strong>CAREL PlantVisor Refrigeration Units</strong></p>
+<p><code>&quot;Server: CarelDataServer&quot; &quot;200 Document follows&quot;</code></p>
+<p><strong>Nordex Wind Turbine Farms</strong></p>
+<p><code>http.title:&quot;Nordex Control&quot; &quot;Windows 2000 5.0 x86&quot; &quot;Jetty/3.1 (JSP 1.1; Servlet 2.2; java 1.6.0_14)&quot;</code></p>
+<p><strong>C4 Max Commercial Vehicle GPS Trackers</strong></p>
+<p><code>&quot;[1m[35mWelcome on console&quot;</code></p>
+<p><strong>DICOM Medical X-Ray Machines</strong></p>
+<p>Secured by default, thankfully, but these 1,700+ machines still have no business being on the internet.</p>
+<p><code>&quot;DICOM Server Response&quot; port:104</code></p>
+<p><strong>GaugeTech Electricity Meters</strong></p>
+<p><code>&quot;Server: EIG Embedded Web Server&quot; &quot;200 Document follows&quot;</code></p>
+<p><strong>Siemens Industrial Automation</strong></p>
+<p><code>&quot;Siemens, SIMATIC&quot; port:161</code></p>
+<p><strong>Siemens HVAC Controllers</strong></p>
+<p><code>&quot;Server: Microsoft-WinCE&quot; &quot;Content-Length: 12581&quot;</code></p>
+<p><strong>Door / Lock Access Controllers</strong></p>
+<p><code>&quot;HID VertX&quot; port:4070</code></p>
+<p><strong>Railroad Management</strong></p>
+<p><code>&quot;log off&quot; &quot;select the appropriate&quot;</code></p>
+<p><strong>Tesla Powerpack charging Status:</strong></p>
+<p>Helps to find the charging status of tesla powerpack.
+<code>http.title:&quot;Tesla PowerPack System&quot; http.component:&quot;d3&quot; -ga3ca4f2</code></p>
+<p><strong>XZERES Wind Turbine</strong></p>
+<p><code>title:&quot;xzeres wind&quot;</code></p>
+<p><strong>PIPS Automated License Plate Reader</strong></p>
+<p><code>&quot;html:&quot;PIPS Technology ALPR Processors&quot;&quot;</code></p>
+<p><strong>Modbus</strong></p>
+<p><code>&quot;port:502&quot;</code></p>
+<p><strong>Niagara Fox</strong></p>
+<p><code>&quot;port:1911,4911 product:Niagara&quot;</code></p>
+<p><strong>GE-SRTP</strong></p>
+<p><code>&quot;port:18245,18246 product:&quot;general electric&quot;&quot;</code></p>
+<p><strong>MELSEC-Q</strong></p>
+<p><code>&quot;port:5006,5007 product:mitsubishi&quot;</code></p>
+<p><strong>CODESYS</strong></p>
+<p><code>&quot;port:2455 operating system&quot;</code></p>
+<p><strong>S7</strong></p>
+<p><code>&quot;port:102&quot;</code></p>
+<p><strong>BACnet</strong></p>
+<p><code>&quot;port:47808&quot;</code></p>
+<p><strong>HART-IP</strong></p>
+<p><code>&quot;port:5094 hart-ip&quot;</code></p>
+<p><strong>Omron FINS</strong></p>
+<p><code>&quot;port:9600 response code&quot;</code></p>
+<p><strong>IEC 60870-5-104</strong></p>
+<p><code>&quot;port:2404 asdu address&quot;</code></p>
+<p><strong>DNP3</strong></p>
+<p><code>&quot;port:20000 source address&quot;</code></p>
+<p><strong>EtherNet/IP</strong></p>
+<p><code>&quot;port:44818&quot;</code></p>
+<p><strong>PCWorx</strong></p>
+<p><code>&quot;port:1962 PLC&quot;</code></p>
+<p>**Crimson v3.0</p>
+<p><code>&quot;port:789 product:&quot;Red Lion Controls&quot;</code></p>
+<p><strong>ProConOS</strong></p>
+<p><code>&quot;port:20547 PLC&quot;</code></p>
+<h1 id="remote-desktop">Remote Desktop</h1>
+<p><strong>Unprotected VNC</strong></p>
+<p><code>&quot;authentication disabled&quot; port:5900,5901</code>
+<code>&quot;authentication disabled&quot; &quot;RFB 003.008&quot;</code></p>
+<p><strong>Windows RDP</strong></p>
+<p>99.99% are secured by a secondary Windows login screen.</p>
+<p><code>&quot;\x03\x00\x00\x0b\x06\xd0\x00\x00\x124\x00&quot;</code></p>
+<h1 id="c2-infrastructure">C2 Infrastructure</h1>
+<p><strong>CobaltStrike Servers</strong></p>
+<p><code>product:&quot;cobalt strike team server&quot;</code>
+<code>product:&quot;Cobalt Strike Beacon&quot;</code>
+<code>ssl.cert.serial:146473198</code> - default certificate serial number
+<code>ssl.jarm:07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1</code>
+<code>ssl:foren.zik</code></p>
+<p><strong>Brute Ratel</strong></p>
+<p><code>http.html_hash:-1957161625</code>
+<code>product:&quot;Brute Ratel C4&quot;</code></p>
+<p><strong>Covenant</strong></p>
+<p><code>ssl:”Covenant” http.component:”Blazor”</code></p>
+<p><strong>Metasploit</strong></p>
+<p><code>ssl:&quot;MetasploitSelfSignedCA&quot;</code></p>
+<h1 id="network-infrastructure">Network Infrastructure</h1>
+<p><strong>Hacked routers:</strong></p>
+<p>Routers which got compromised
+<code>hacked-router-help-sos</code></p>
+<p><strong>Redis open instances</strong></p>
+<p><code>product:&quot;Redis key-value store&quot;</code></p>
+<p><strong>Citrix:</strong></p>
+<p>Find Citrix Gateway.
+<code>title:&quot;citrix gateway&quot;</code></p>
+<p><strong>Weave Scope Dashboards</strong></p>
+<p>Command-line access inside Kubernetes pods and Docker containers, and real-time visualization/monitoring of the entire infrastructure.</p>
+<p><code>title:&quot;Weave Scope&quot; http.favicon.hash:567176827</code></p>
+<p><strong>Jenkins CI</strong><br>
+<code>&quot;X-Jenkins&quot; &quot;Set-Cookie: JSESSIONID&quot; http.title:&quot;Dashboard&quot;</code></p>
+<p><strong>Jenkins:</strong></p>
+<p>Jenkins Unrestricted Dashboard
+<code>x-jenkins 200</code></p>
+<p><strong>Docker APIs</strong></p>
+<p><code>&quot;Docker Containers:&quot; port:2375</code></p>
+<p><strong>Docker Private Registries</strong></p>
+<p><code>&quot;Docker-Distribution-Api-Version: registry&quot; &quot;200 OK&quot; -gitlab</code></p>
+<p><strong>Pi-hole Open DNS Servers</strong></p>
+<p><code>&quot;dnsmasq-pi-hole&quot; &quot;Recursion: enabled&quot;</code></p>
+<p><strong>DNS Servers with recursion</strong></p>
+<p><code>&quot;port: 53&quot; Recursion: Enabled</code></p>
+<p><strong>Already Logged-In as root via Telnet</strong></p>
+<p><code>&quot;root@&quot; port:23 -login -password -name -Session</code></p>
+<p><strong>Telnet Access:</strong></p>
+<p>NO password required for telnet access.
+<code>port:23 console gateway</code></p>
+<p><strong>Polycom video-conference system no-auth shell</strong></p>
+<p><code>&quot;polycom command shell&quot;</code></p>
+<p><strong>NPort serial-to-eth / MoCA devices without password</strong></p>
+<p><code>nport -keyin port:23</code></p>
+<p><strong>Android Root Bridges</strong></p>
+<p>A tangential result of Google&rsquo;s sloppy fractured update approach. 🙄 More information here.</p>
+<p><code>&quot;Android Debug Bridge&quot; &quot;Device&quot; port:5555</code></p>
+<p><strong>Lantronix Serial-to-Ethernet Adapter Leaking Telnet Passwords</strong></p>
+<p><code>Lantronix password port:30718 -secured</code></p>
+<p><strong>Citrix Virtual Apps</strong></p>
+<p><code>&quot;Citrix Applications:&quot; port:1604</code></p>
+<p><strong>Cisco Smart Install</strong></p>
+<p>Vulnerable (kind of &ldquo;by design,&rdquo; but especially when exposed).</p>
+<p><code>&quot;smart install client active&quot;</code></p>
+<p><strong>PBX IP Phone Gateways</strong></p>
+<p><code>PBX &quot;gateway console&quot; -password port:23</code></p>
+<p><strong>Polycom Video Conferencing</strong></p>
+<p><code>http.title:&quot;- Polycom&quot; &quot;Server: lighttpd&quot;</code>
+<code>&quot;Polycom Command Shell&quot; -failed port:23</code></p>
+<p><strong>Telnet Configuration:</strong></p>
+<p><code>&quot;Polycom Command Shell&quot; -failed port:23</code></p>
+<p>Example: Polycom Video Conferencing</p>
+<p><strong>Bomgar Help Desk Portal</strong></p>
+<p><code>&quot;Server: Bomgar&quot; &quot;200 OK&quot;</code></p>
+<p><strong>Intel Active Management CVE-2017-5689</strong></p>
+<p><code>&quot;Intel(R) Active Management Technology&quot; port:623,664,16992,16993,16994,16995</code>
+<code>”Active Management Technology”</code></p>
+<p><strong>HP iLO 4 CVE-2017-12542</strong></p>
+<p><code>HP-ILO-4 !&quot;HP-ILO-4/2.53&quot; !&quot;HP-ILO-4/2.54&quot; !&quot;HP-ILO-4/2.55&quot; !&quot;HP-ILO-4/2.60&quot; !&quot;HP-ILO-4/2.61&quot; !&quot;HP-ILO-4/2.62&quot; !&quot;HP-iLO-4/2.70&quot; port:1900</code></p>
+<p><strong>Lantronix ethernet adapter’s admin interface without password</strong></p>
+<p><code>&quot;Press Enter for Setup Mode port:9999&quot;</code></p>
+<p><strong>Wifi Passwords:</strong></p>
+<p>Helps to find the cleartext wifi passwords in Shodan.
+<code>html:&quot;def_wirelesspassword&quot;</code></p>
+<p><strong>Misconfigured Wordpress Sites:</strong></p>
+<p>The wp-config.php if accessed can give out the database credentials.
+<code>http.html:&quot;* The wp-config.php creation script uses this file&quot;</code></p>
+<h1 id="outlook-web-access">Outlook Web Access:</h1>
+<p><strong>Exchange 2007</strong></p>
+<p><code>&quot;x-owa-version&quot; &quot;IE=EmulateIE7&quot; &quot;Server: Microsoft-IIS/7.0&quot;</code></p>
+<p><strong>Exchange 2010</strong></p>
+<p><code>&quot;x-owa-version&quot; &quot;IE=EmulateIE7&quot; http.favicon.hash:442749392</code></p>
+<p><strong>Exchange 2013 / 2016</strong></p>
+<p><code>&quot;X-AspNet-Version&quot; http.title:&quot;Outlook&quot; -&quot;x-owa-version&quot;</code></p>
+<p><strong>Lync / Skype for Business</strong></p>
+<p><code>&quot;X-MS-Server-Fqdn&quot;</code></p>
+<h1 id="network-attached-storage-nas">Network Attached Storage (NAS)</h1>
+<p><strong>SMB (Samba) File Shares</strong></p>
+<p>Produces ~500,000 results&hellip;narrow down by adding &ldquo;Documents&rdquo; or &ldquo;Videos&rdquo;, etc.</p>
+<p><code>&quot;Authentication: disabled&quot; port:445</code></p>
+<p><strong>Specifically domain controllers:</strong></p>
+<p><code>&quot;Authentication: disabled&quot; NETLOGON SYSVOL -unix port:445</code></p>
+<p><strong>Concerning default network shares of QuickBooks files:</strong></p>
+<p><code>&quot;Authentication: disabled&quot; &quot;Shared this folder to access QuickBooks files OverNetwork&quot; -unix port:445</code></p>
+<p><strong>FTP Servers with Anonymous Login</strong></p>
+<p><code>&quot;220&quot; &quot;230 Login successful.&quot; port:21</code></p>
+<p><strong>Iomega / LenovoEMC NAS Drives</strong></p>
+<p><code>&quot;Set-Cookie: iomega=&quot; -&quot;manage/login.html&quot; -http.title:&quot;Log In&quot;</code></p>
+<p><strong>Buffalo TeraStation NAS Drives</strong></p>
+<p><code>Redirecting sencha port:9000</code></p>
+<p><strong>Logitech Media Servers</strong></p>
+<p><code>&quot;Server: Logitech Media Server&quot; &quot;200 OK&quot;</code></p>
+<p>Example: Logitech Media Servers</p>
+<p><strong>Plex Media Servers</strong></p>
+<p><code>&quot;X-Plex-Protocol&quot; &quot;200 OK&quot; port:32400</code></p>
+<p><strong>Tautulli / PlexPy Dashboards</strong></p>
+<p><code>&quot;CherryPy/5.1.0&quot; &quot;/home&quot;</code></p>
+<p><strong>Home router attached USB</strong></p>
+<p><code>&quot;IPC$ all storage devices&quot;</code></p>
+<h1 id="webcams">Webcams</h1>
+<p><strong>Generic camera search</strong></p>
+<p><code>title:camera</code></p>
+<p><strong>Webcams with screenshots</strong></p>
+<p><code>webcam has_screenshot:true</code></p>
+<p><strong>D-Link webcams</strong></p>
+<p><code>&quot;d-Link Internet Camera, 200 OK&quot;</code></p>
+<p><strong>Hipcam</strong></p>
+<p><code>&quot;Hipcam RealServer/V1.0&quot;</code></p>
+<p><strong>Yawcams</strong></p>
+<p><code>&quot;Server: yawcam&quot; &quot;Mime-Type: text/html&quot;</code></p>
+<p><strong>webcamXP/webcam7</strong></p>
+<p><code>(&quot;webcam 7&quot; OR &quot;webcamXP&quot;) http.component:&quot;mootools&quot; -401</code></p>
+<p><strong>Android IP Webcam Server</strong></p>
+<p><code>&quot;Server: IP Webcam Server&quot; &quot;200 OK&quot;</code></p>
+<p><strong>Security DVRs</strong></p>
+<p><code>html:&quot;DVR_H264 ActiveX&quot;</code></p>
+<p><strong>Surveillance Cams:</strong></p>
+<p>With username:admin and password: :P
+<code>NETSurveillance uc-httpd</code><br>
+<code>Server: uc-httpd 1.0.0</code></p>
+<h1 id="printers--copiers">Printers &amp; Copiers:</h1>
+<p><strong>HP Printers</strong></p>
+<p><code>&quot;Serial Number:&quot; &quot;Built:&quot; &quot;Server: HP HTTP&quot;</code></p>
+<p><strong>Xerox Copiers/Printers</strong></p>
+<p><code>ssl:&quot;Xerox Generic Root&quot;</code></p>
+<p><strong>Epson Printers</strong></p>
+<p><code>&quot;SERVER: EPSON_Linux UPnP&quot; &quot;200 OK&quot;</code></p>
+<p><code>&quot;Server: EPSON-HTTP&quot; &quot;200 OK&quot;</code></p>
+<p><strong>Canon Printers</strong></p>
+<p><code>&quot;Server: KS_HTTP&quot; &quot;200 OK&quot;</code></p>
+<p><code>&quot;Server: CANON HTTP Server&quot;</code></p>
+<h1 id="home-devices">Home Devices</h1>
+<p><strong>Yamaha Stereos</strong></p>
+<p><code>&quot;Server: AV_Receiver&quot; &quot;HTTP/1.1 406&quot;</code></p>
+<p><strong>Apple AirPlay Receivers</strong></p>
+<p>Apple TVs, HomePods, etc.</p>
+<p><code>&quot;\x08_airplay&quot; port:5353</code></p>
+<p><strong>Chromecasts / Smart TVs</strong></p>
+<p><code>&quot;Chromecast:&quot; port:8008</code></p>
+<p><strong>Crestron Smart Home Controllers</strong></p>
+<p><code>&quot;Model: PYNG-HUB&quot;</code></p>
+<h1 id="random-stuff">Random Stuff</h1>
+<p><strong>Calibre libraries</strong></p>
+<p><code>&quot;Server: calibre&quot; http.status:200 http.title:calibre</code></p>
+<p><strong>OctoPrint 3D Printer Controllers</strong></p>
+<p><code>title:&quot;OctoPrint&quot; -title:&quot;Login&quot; http.favicon.hash:1307375944</code></p>
+<p><strong>Etherium Miners</strong></p>
+<p><code>&quot;ETH - Total speed&quot;</code></p>
+<p><strong>Apache Directory Listings</strong></p>
+<p>Substitute .pem with any extension or a filename like phpinfo.php.</p>
+<p><code>http.title:&quot;Index of /&quot; http.html:&quot;.pem&quot;</code></p>
+<p><strong>Misconfigured WordPress</strong></p>
+<p>Exposed wp-config.php files containing database credentials.</p>
+<p><code>http.html:&quot;* The wp-config.php creation script uses this file&quot;</code></p>
+<p><strong>Too Many Minecraft Servers</strong></p>
+<p><code>&quot;Minecraft Server&quot; &quot;protocol 340&quot; port:25565</code></p>
+<p><strong>Literally Everything in North Korea</strong></p>
+<p><code>net:175.45.176.0/22,210.52.109.0/24,77.94.35.0/24</code></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
+</html>
