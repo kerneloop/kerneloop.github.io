@@ -1,20 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on Kerneloop</title>
-    <link>//localhost:1313/tags/docker/</link>
-    <description>Recent content in Docker on Kerneloop</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 07 Feb 2026 14:25:36 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Preparacion de un cluster de Kubernetes con Kubeadm</title>
-      <link>//localhost:1313/posts/kubernetescontainerd/</link>
-      <pubDate>Sat, 07 Feb 2026 14:25:36 +0100</pubDate>
-      <guid>//localhost:1313/posts/kubernetescontainerd/</guid>
-      <description>DESCRIPCIÓN. Preparación de clúster de Kubernetes para Certificación CKA.&#xA;Direcciones IP:&#xA;master -&amp;gt; 192.168.0.54&#xA;worker1 -&amp;gt; 192.168.0.56&#xA;worker2 -&amp;gt; 192.168.0.59&#xA;REQUISITOS. Contiene las siguientes especificaciones:&#xA;SISTEMA OPERATIVO -&amp;gt; Ubuntu Server (Minimal)&#xA;HARDWARE (Minimun) -&amp;gt; 2 Core CPU &amp;amp; 4 GB RAM&#xA;SOFTWARE -&amp;gt; ContainerD – Kubernetes (k8s)&#xA;La estructura del cluster será la siguiente Procedimiento Partiremos de una instalación mínima (Sin Interfaz Gráfica) en Ubuntu Server LTS 24.X. Como motor de ejecución de contenedores usaremos ContainerD.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Kerneloop</title><link>https://kerneloop.github.io/tags/docker/</link><description>Recent content in Docker on Kerneloop</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 07 Feb 2026 14:25:36 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Preparacion de un cluster de Kubernetes con Kubeadm</title><link>https://kerneloop.github.io/posts/kubernetescontainerd/</link><pubDate>Sat, 07 Feb 2026 14:25:36 +0100</pubDate><guid>https://kerneloop.github.io/posts/kubernetescontainerd/</guid><description>DESCRIPCIÓN. Preparación de clúster de Kubernetes para Certificación CKA.
+Direcciones IP:
+master -&amp;gt; 192.168.0.54
+worker1 -&amp;gt; 192.168.0.56
+worker2 -&amp;gt; 192.168.0.59
+REQUISITOS. Contiene las siguientes especificaciones:
+SISTEMA OPERATIVO -&amp;gt; Ubuntu Server (Minimal)
+HARDWARE (Minimun) -&amp;gt; 2 Core CPU &amp;amp; 4 GB RAM
+SOFTWARE -&amp;gt; ContainerD – Kubernetes (k8s)
+La estructura del cluster será la siguiente Procedimiento Partiremos de una instalación mínima (Sin Interfaz Gráfica) en Ubuntu Server LTS 24.X. Como motor de ejecución de contenedores usaremos ContainerD.</description></item></channel></rss>

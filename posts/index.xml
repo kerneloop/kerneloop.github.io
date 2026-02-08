@@ -1,4 +1,148 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Kerneloop</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Kerneloop</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 07 Feb 2026 14:25:36 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Autopsy</title><link>https://kerneloop.github.io/posts/autopsy/</link><pubDate>Mon, 22 Dec 2025 13:28:55 +0100</pubDate><guid>https://kerneloop.github.io/posts/autopsy/</guid><description>Forensic Analisys Como analistas forenses se nos presenta una imagen obtenida del equipo personal de un crimen digital. Nuestra tarea es analizar esta imagen de su equipo y sacar las conclusiones que se convertirán en Evidencias Digitales para su posterior presentación.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Kerneloop</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Kerneloop</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 07 Feb 2026 14:25:36 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Preparacion de un cluster de Kubernetes con Kubeadm</title><link>https://kerneloop.github.io/posts/kubernetescontainerd/</link><pubDate>Sat, 07 Feb 2026 14:25:36 +0100</pubDate><guid>https://kerneloop.github.io/posts/kubernetescontainerd/</guid><description>DESCRIPCIÓN. Preparación de clúster de Kubernetes para Certificación CKA.
+Direcciones IP:
+master -&amp;gt; 192.168.0.54
+worker1 -&amp;gt; 192.168.0.56
+worker2 -&amp;gt; 192.168.0.59
+REQUISITOS. Contiene las siguientes especificaciones:
+SISTEMA OPERATIVO -&amp;gt; Ubuntu Server (Minimal)
+HARDWARE (Minimun) -&amp;gt; 2 Core CPU &amp;amp; 4 GB RAM
+SOFTWARE -&amp;gt; ContainerD – Kubernetes (k8s)
+La estructura del cluster será la siguiente Procedimiento Partiremos de una instalación mínima (Sin Interfaz Gráfica) en Ubuntu Server LTS 24.X. Como motor de ejecución de contenedores usaremos ContainerD.</description><content type="html"><![CDATA[<h2 id="descripción">DESCRIPCIÓN.</h2>
+<p>Preparación de clúster de Kubernetes para Certificación CKA.<br>
+Direcciones IP:<br>
+<strong>master</strong> -&gt; 192.168.0.54<br>
+<strong>worker1</strong> -&gt; 192.168.0.56<br>
+<strong>worker2</strong> -&gt; 192.168.0.59</p>
+<h2 id="requisitos">REQUISITOS.</h2>
+<p>Contiene las siguientes especificaciones:</p>
+<p>SISTEMA OPERATIVO -&gt; Ubuntu Server (Minimal)<br>
+HARDWARE (Minimun) -&gt; 2 Core CPU &amp; 4 GB RAM<br>
+SOFTWARE -&gt; ContainerD – Kubernetes (k8s)</p>
+<h2 id="la-estructura-del-cluster-será-la-siguiente">La estructura del cluster será la siguiente</h2>
+<p><img alt="esquema" src="/images/kubernetes/preparacion/1.png"></p>
+<h2 id="procedimiento">Procedimiento</h2>
+<p>Partiremos de una instalación mínima (Sin Interfaz Gráfica) en <strong>Ubuntu Server LTS 24.X</strong>.
+Como motor de ejecución de contenedores usaremos ContainerD.
+Es un entorno más ligero ya que no utiliza Docker al completo, solo la parte que virtualizará.
+Iremos paso a paso realizando la instalación y posteriormente iniciando el Clúster. También uniremos dos nodos trabajadores que se podrán comunicar.</p>
+<h2 id="instalación-containerd">Instalación Containerd</h2>
+<h3 id="actualizamos-repositorios">Actualizamos repositorios</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+</span></span></code></pre></div><h3 id="desinstalamos-posibles-conflictos">Desinstalamos posibles conflictos</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt remove <span style="color:#66d9ef">$(</span>dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h3 id="instalamos-paquetes">Instalamos paquetes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update 
+</span></span><span style="display:flex;"><span>sudo apt install ca-certificates curl runc apt-transport-https ca-certificates curl gnupg2 software-properties-common git vim golang golang-go sudo gpg -y
+</span></span></code></pre></div><h3 id="quitamos-la-memoria-swap-y-activamos-modulos-de-red">Quitamos la memoria swap y activamos modulos de red</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo swapoff -a
+</span></span><span style="display:flex;"><span>sudo modprobe overlay
+</span></span><span style="display:flex;"><span>sudo modprobe br<span style="color:#ae81ff">\_</span>netfilter
+</span></span></code></pre></div><h3 id="comprobaremos-en-el-fichero-etcfstab-el-estado-de-la-memoria-swap">Comprobaremos en el fichero /etc/fstab el estado de la memoria swap:</h3>
+<p><img alt="swapoff" src="/images/kubernetes/preparacion/2.png"></p>
+<h3 id="configuracion-de-red-para-kubernetes">Configuracion de red para kubernetes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tee /etc/sysctl.d/kubernetes.conf
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.ipv4.ip_forward = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl --system
+</span></span></code></pre></div><h3 id="instalacion-de-docker">Instalacion de DOCKER</h3>
+<h3 id="add-dockers-official-gpg-key">Add Docker&rsquo;s official GPG key:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.asc
+</span></span></code></pre></div><h3 id="añadimos-repositorios-necesarios">Añadimos Repositorios Necesarios:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tee /etc/apt/sources.list.d/docker.sources 
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Types: deb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">URIs: https://download.docker.com/linux/ubuntu
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Suites: $(. /etc/os-release &amp;&amp; echo &#34;${UBUNTU\_CODENAME:-$VERSION\_CODENAME}&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Components: stable
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Signed-By: /etc/apt/keyrings/docker.asc
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+</span></span></code></pre></div><h3 id="configuracion-de-containerd-para-kubernetes">Configuracion de containerd para kubernetes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>containerd config default &gt; /etc/containerd/config.toml
+</span></span></code></pre></div><h3 id="accederemos-a-la-configuración-y-ajustaremos-el-systemgroup">Accederemos a la configuración y ajustaremos el systemgroup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/containerd/config.toml
+</span></span></code></pre></div><h3 id="modificamos-systemdcgroup-y-cambiamos-false-a-true">Modificamos SystemdCgroup y cambiamos false a true</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>plugins.<span style="color:#e6db74">&#34;io.containerd.grpc.v1.cri&#34;</span>.containerd.runtimes.runc<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>plugins.<span style="color:#e6db74">&#34;io.containerd.grpc.v1.cri&#34;</span>.containerd.runtimes.runc.options<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    SystemdCgroup <span style="color:#f92672">=</span> true
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart containerd
+</span></span></code></pre></div><h2 id="instalación-de-kubeadm">Instalación de Kubeadm</h2>
+<h3 id="instalación-de-paquetes-kubeadm-por-defecto">Instalación de paquetes kubeadm por defecto</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.34/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+</span></span></code></pre></div><p><strong>NOTA!!</strong> Cambiar la versión de kubernetes según la instalación necesaria. En esta instalación utilizaremos la 1.34.</p>
+<h3 id="añadimos-el-repositorio-con-la-versión-seleccionada">Añadimos el repositorio con la versión seleccionada</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /&#39;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span></code></pre></div><h3 id="actualizamos-repositorios-e-instalamos">Actualizamos repositorios e instalamos</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y kubelet kubeadm kubectl
+</span></span><span style="display:flex;"><span>sudo apt-mark hold kubelet kubeadm kubectl
+</span></span><span style="display:flex;"><span>sudo systemctl enable --now kubelet
+</span></span></code></pre></div><p>Iniciamos el Cluster kubeadm</p>
+<h3 id="creacion-de-cluster-con-kubeadm">Creacion de cluster con Kubeadm</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm init --apiserver-advertise-address 192.168.0.54 --pod-network-cidr 10.10.10.0/24
+</span></span></code></pre></div><p>Una vez haya finalizado nos quedará un <strong>token</strong> que debemos guardar y unos comandos a lanzar desde el usuario del que vamos a usar kubernetes para instalar los <strong>certificados</strong>.</p>
+<p><img alt="esquema" src="/images/kubernetes/preparacion/3.png"></p>
+<p>Nos dejara el siguiente mensaje. Es <strong>importante</strong> que guardemos los <strong>tokens</strong> proporcionados y ejecutemos los comandos según sea conveniente para poder comunicarnos con la API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>To start using your cluster, you need to run the following as a regular user:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  mkdir -p $HOME/.kube
+</span></span><span style="display:flex;"><span>  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</span></span><span style="display:flex;"><span>  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alternatively, if you are the root user, you can run:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  export KUBECONFIG=/etc/kubernetes/admin.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You should now deploy a pod network to the cluster.
+</span></span><span style="display:flex;"><span>Run &#34;kubectl apply -f [podnetwork].yaml&#34; with one of the options listed at:
+</span></span><span style="display:flex;"><span>  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Then you can join any number of worker nodes by running the following on each as root:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubeadm join 192.168.0.54:6443 \
+</span></span><span style="display:flex;"><span>    --token kl5i5b.ziwjtglhh958y2pc --discovery-token-ca-cert-hash sha256:9e632f0e0ff18d271d1ee43e8b135ede-xxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></div><h2 id="container-network-interface-cni">Container Network Interface (CNI)</h2>
+<p>Kubernetes necesitará una serie de <strong>pluggins</strong> básicos para preparar la interfaz de red entre los contenedores.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/containernetworking/plugins
+</span></span><span style="display:flex;"><span>cd plugins
+</span></span><span style="display:flex;"><span>git checkout v1.1.1
+</span></span><span style="display:flex;"><span>./build_linux.sh
+</span></span><span style="display:flex;"><span>sudo mkdir -p /opt/cni/bin
+</span></span><span style="display:flex;"><span>sudo cp bin/* /opt/cni/bin/
+</span></span></code></pre></div><h2 id="cni---calico">CNI - CALICO</h2>
+<p><strong>Calico</strong> es una solución de red y seguridad Open-Source para Kubernetes es capaz de comunicar la red entre los contenedores basándose en los pluggins por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f https://docs.tigera.io/calico/latest/manifests/calico.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.2/manifests/tigera-operator.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.2/manifests/custom-resources.yaml
+</span></span></code></pre></div><p>Comprobaremos que esta funcionando con el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch kubectl get tigerastatus
+</span></span></code></pre></div><p><img alt="esquema" src="/images/kubernetes/preparacion/4.png"></p>
+<h3 id="untaint-nodes">Untaint Nodes</h3>
+<p>Una vez el cluster se haya iniciado los nodos que tengamos “repelerán” la asignación de pods por defecto, esto ayuda a la gestión de recursos y a que en el nodo que actue como Control Plane (CP) no tenga carga de trabajo extra. En nuestro caso utilizaremos tres nodos incluyendo el CP por lo que eliminaremos este ‘Taint’.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/control-plane- 
+</span></span></code></pre></div><p>Tendremos el cluster de la siguiente manera. Se podrán observar los pods de <strong>Calico, almacenamiento (etcd), DNS, Api-server, proxy y scheduler</strong>.
+Estos pods son la estructura base de nuestro cluster y han de estar siempre en estado &ldquo;Running&rdquo;.
+<img alt="esquema" src="/images/kubernetes/preparacion/5.png"></p>
+<p>Procedemos a unir un nodo trabajador mediante el comando que nos ha mostrado el nodo <strong>master</strong>. Veremos como aparecen nuevos <strong>pods</strong> relacionados con <strong>Calico</strong> y con <strong>Proxy</strong>.
+Se pondrán en estado &ldquo;Running&rdquo; y eso significará que el nodo se ha unido correctamente al cluster.
+<img alt="esquema" src="/images/kubernetes/preparacion/6.png"></p>
+<p>De la misma manera uniremos el segundo y LISTO!</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Estos son los primeros pasos de un cluster Kubeadm en local. Podremos observar como el entorno se realiza con el runtime de <strong>ContainerD</strong> (El entorno de virtualización de Docker).
+Partiendo de estas bases podremos crear <strong>Despliegues, contenedores con nuestras aplicaciones, bases de datos</strong> etc. Todo este entorno se controlará a traves de archivos <strong>YAML</strong> y comandos con
+la herramienta <strong>kubectl</strong> desde la consola. Es importante controlar bien los <strong>certificados</strong> y <strong>permisos (RBAC)</strong> para una gestion segura y eficiente del entorno. Una vez tengamos el entorno preparado podremos empezar
+a aprender a cerca de la gestión de sus recuros. Kubernetes(k8s) es una herramienta muy potente en los entornos de produccion de <strong>desarrollo, capaz de automatizar, implementar y escalar</strong> servicios gestionados en <strong>contenedores</strong>.</p>
+]]></content></item><item><title>Autopsy</title><link>https://kerneloop.github.io/posts/autopsy/</link><pubDate>Mon, 22 Dec 2025 13:28:55 +0100</pubDate><guid>https://kerneloop.github.io/posts/autopsy/</guid><description>Forensic Analisys Como analistas forenses se nos presenta una imagen obtenida del equipo personal de un crimen digital. Nuestra tarea es analizar esta imagen de su equipo y sacar las conclusiones que se convertirán en Evidencias Digitales para su posterior presentación.
 REQUISITOS Sistema Operativo -&amp;gt; Windows 10
 Software -&amp;gt; FTK Imager - Autopsy
 PROCEDIMIENTO FTK Imager Para comenzar con este analisis lo primero es hacer una imagen del equipo, para ello utilizaremos FTK Imager.</description><content type="html"><![CDATA[<h1 id="forensic-analisys">Forensic Analisys</h1>
