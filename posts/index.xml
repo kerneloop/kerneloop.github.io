@@ -1,4 +1,49 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Kerneloop</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Kerneloop</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 07 Mar 2026 13:41:54 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Preparacion de un cluster de Kubernetes con Kubeadm</title><link>https://kerneloop.github.io/posts/kubernetescontainerd/</link><pubDate>Sat, 07 Feb 2026 14:25:36 +0100</pubDate><guid>https://kerneloop.github.io/posts/kubernetescontainerd/</guid><description>DESCRIPCIÓN. Preparación de clúster de Kubernetes para Certificación CKA.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Kerneloop</title><link>https://kerneloop.github.io/posts/</link><description>Recent content in Posts on Kerneloop</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 07 Mar 2026 13:41:54 +0100</lastBuildDate><atom:link href="https://kerneloop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Preparacion Entorno CKA</title><link>https://kerneloop.github.io/posts/prep-cka/</link><pubDate>Sat, 07 Mar 2026 13:41:54 +0100</pubDate><guid>https://kerneloop.github.io/posts/prep-cka/</guid><description>DESCRIPCIÓN. CKA - Certified Kubernetes Administrator Preparación de entorno de Kubernetes para practicar la Certificación CKA.
+Utilizaremos el despliegue de CK-X de github hecho por Sailor.sh https://github.com/sailor-sh/CK-X
+REQUISITOS. Contiene las siguientes especificaciones:
+SISTEMA OPERATIVO -&amp;gt; Ubuntu Server (Minimal) HARDWARE -&amp;gt; (Minimun) 2 Core CPU &amp;amp; 4 GB RAM SOFTWARE -&amp;gt; Docker Compose - ContainerD – Kubernetes (k8s)
+Procedimiento Partiremos de una instalación mínima (Sin Interfaz Gráfica) en Ubuntu Server LTS 24.</description><content type="html"><![CDATA[<p><img alt="logo" src="/images/kubernetes/preparacion/0.png"></p>
+<h2 id="descripción">DESCRIPCIÓN.</h2>
+<p>CKA - Certified Kubernetes Administrator
+Preparación de entorno de Kubernetes para practicar la Certificación CKA.</p>
+<p>Utilizaremos el despliegue de CK-X de github hecho por Sailor.sh
+<a href="https://github.com/sailor-sh/CK-X">https://github.com/sailor-sh/CK-X</a></p>
+<h2 id="requisitos">REQUISITOS.</h2>
+<p>Contiene las siguientes especificaciones:</p>
+<p>SISTEMA OPERATIVO -&gt; Ubuntu Server (Minimal)
+HARDWARE -&gt; (Minimun)	2 Core CPU &amp; 4 GB RAM
+SOFTWARE -&gt; Docker Compose - ContainerD – Kubernetes (k8s)</p>
+<h2 id="procedimiento">Procedimiento</h2>
+<p>Partiremos de una instalación mínima (Sin Interfaz Gráfica) en Ubuntu Server LTS 24.X.
+Como motor de ejecución de contenedores. Es un entorno más ligero ya que no dispone de interfaz gráfica.
+Iremos paso a paso realizando la instalación y posteriormente iniciando el Clúster. También veremos los tipos de examen que hay y sus certificaciones.</p>
+<h1 id="preparación-de-paquetes">Preparación de paquetes</h1>
+<h3 id="actualizamos-repositorios-e-instalamos-paquetes-necesarios">Actualizamos repositorios e instalamos paquetes necesarios</h3>
+<p>sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt install docker.io docker-compose docker-compose-v2 -y</p>
+<p>Instalación de CK-X</p>
+<h3 id="instalación-automatizada-del-entorno-de-exámenes-de-kubernetes">Instalación automatizada del entorno de exámenes de Kubernetes</h3>
+<p>sudo su
+curl -fsSL <a href="https://raw.githubusercontent.com/nishanb/ck-x/master/scripts/install.sh">https://raw.githubusercontent.com/nishanb/ck-x/master/scripts/install.sh</a> | bash</p>
+<h1 id="useful-commands">Nos dejará el siguiente mensaje:<br>
+Useful Commands</h1>
+<p>CK-X Simulator has been installed in: /home/a/ck-x-simulator, run all below commands from this directory<br>
+To stop CK-X  docker compose down &ndash;volumes &ndash;remove-orphans &ndash;rmi all<br>
+To Restart CK-X: docker compose restart<br>
+To clean up all containers and images: docker system prune -a<br>
+To remove only CK-X images: docker compose down &ndash;rmi all<br>
+To access CK-X Simulator: <a href="https://play.sailor.sh/">https://play.sailor.sh/</a><br>
+To access CK-X Simulator locally use: http://localhost:30080/<br>
+<img alt="installed" src="/images/kubernetes/prep-cka/0.Installed.png">
+Comprobación del estado</p>
+<h3 id="comprobación-de-estado-de-entorno-con-docker">Comprobación de estado de entorno con docker</h3>
+<p>Sudo docker ps &ndash;all<br>
+<img alt="estado" src="/images/kubernetes/prep-cka/1.estado.png">
+Inicio
+<img alt="inicio" src="/images/kubernetes/prep-cka/2.inicio.png">
+Desde este panel accederemos a las certificaciones según el nivel de dificultad que deseemos y el tipo de certificación.
+<img alt="certificaciones" src="/images/kubernetes/prep-cka/3.certificaciones.png"></p>
+]]></content></item><item><title>Preparacion de un cluster de Kubernetes con Kubeadm</title><link>https://kerneloop.github.io/posts/kubernetescontainerd/</link><pubDate>Sat, 07 Feb 2026 14:25:36 +0100</pubDate><guid>https://kerneloop.github.io/posts/kubernetescontainerd/</guid><description>DESCRIPCIÓN. Preparación de clúster de Kubernetes para Certificación CKA.
 Direcciones IP:
 master -&amp;gt; 192.168.0.54
 worker1 -&amp;gt; 192.168.0.56
